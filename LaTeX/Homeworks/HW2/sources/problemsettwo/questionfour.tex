@@ -1,0 +1,54 @@
+\section{Mechanic`s Rule}
+	
+	Mechanic`s Rule:
+
+	\begin{equation}
+		x_{n+1} = \frac{1}{2}\left( x_{n} + \frac{a}{x_{n}} \right),\ n=0,1,2,...
+	\label{eq:mechanic}
+	\end{equation}
+
+	NOTE: The Question (a) was skipped because of dificults on understanding what to do with the constant value $a$ when applying Newton`s Method.
+
+	\subsection{Question (b)}
+
+		Using $x_{0} = 3$ to approximate $\sqrt{a}$ with $a = 10$ in 3 iterations using \cref{eq:mechanic}:
+		
+		\begin{align}
+			x_{1} &= \frac{1}{2}\left( 3 + \frac{10}{3} \right)& \notag \\
+			&= \frac{3}{2} + \frac{10}{6}& \notag \\
+			&= 1.5 + 1.6667& \notag \\
+			&= 3.1667&
+			\label{eq:qfourxone}
+		\end{align}
+
+		\begin{align}
+			x_{2} &= \frac{1}{2}\left( 3.1667 + \frac{10}{3.1667} \right)& \notag \\
+			&= \frac{3.1667}{2} + \frac{10}{6.3334}& \notag \\
+			&= 1.5834 + 1.5789& \notag \\
+			&= 3.1623&
+			\label{eq:qfourxtwo}
+		\end{align}
+
+		\begin{align}
+			x_{2} &= \frac{1}{2}\left( 3.1623 + \frac{10}{3.1623} \right)& \notag \\
+			&= \frac{3.1623}{2} + \frac{10}{6.3246}& \notag \\
+			&= 1.5812 + 1.5811& \notag \\
+			&= 3.1623&
+			\label{eq:qfourxthree}
+		\end{align}
+
+		Using GNU Octave and asking the value of $\sqrt{10}$ using the format \emph{long g}, the result is: $3.16227766016838$. With 5 significative digits the absolute and percentage error is 0. But, considering all the digits returned by GNU Octave, the absolute error and percentage error is:
+
+		\begin{align}
+			error_{absolute} &= |3.16227766016838 - 3.1623|& \notag \\
+			&= |-0.00022339831520|& \notag \\
+			&= 0.00022339831520&
+			\label{eq:qfourabs}
+		\end{align}
+
+		\begin{align}
+			error_{percentage} &= \frac{|3.16227766016838 - 3.1623|}{|3.16227766016838|}& \notag \\
+			&= \frac{0.00022339831520}{3.16227766016838}& \notag \\
+			&= 0.00000706447504&
+			\label{eq:qfourper}
+		\end{align}

@@ -1,0 +1,37 @@
+\section{Secant Method}
+
+	Secant Method:
+	
+	\begin{equation}
+		x_{k+1} = x_{k} - y_{k}\frac{x_{k}-x_{k-1}}{y_{k}-y_{k-1}}
+	\label{eq:secant}
+	\end{equation}
+	
+	The equation is \cref{eq:qone}, the same of the previous question. Using $x_{0} = 0$, $x_{1} = 1$, and \cref{eq:qone} as $y$ to discover $x_{2}$ in \cref{eq:secant}:
+	
+	\begin{align}
+		x_{2} &= 1 - \left( ln(1+1) - cos(1) \right)*\frac{1-0}{\left( ln(1+1) - cos(1) \right) - \left( ln(0+1) - cos(0) \right)}& \notag \\
+		&= 1 - \left( 0.6931 - 0.5403 \right)*\frac{1}{\left( 0.6931 - 0.5403 \right) - \left( 0 - 1 \right)}& \notag \\
+		&= 1 - 0.1528*\frac{1}{0.1528 - (-1)}& \notag \\
+		&= 1 - 0.1528 *\frac{1}{1.1528}& \notag \\
+		&= 1 - 0.1326& \notag \\
+		&= 0.8674&
+		\label{eq:qtwoxtwo}
+	\end{align}
+
+	Who has the same result as \cref{eq:qonexone}
+	The two next iterations (for $x_{3}$ and $x_{4}$) was made using GNU Octave and their results are the same as described in \cref{tab:qone}, as can be seen in \cref{tab:qtwo}.
+
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{|c||c|c||c|c|}
+				\hline
+				\textbf{$k$} & \textbf{$x_{k-1}$} & \textbf{$x_{k}$} & \textbf{$x_{k+1}$} & \textbf{$y(x_{k+1})$} \\ \hline
+				1 & 0 & 1 & 0.8674 & -0.0223 \\ \hline
+				2 & 0.8674 & 1 & 0.8843 & -0.0003 \\ \hline
+				3 & 0.8843 & 1 & 0.8845 & -0.0000 \\ \hline
+			\end{tabular}
+			\caption{Results of 3 iterations of the \cref{eq:secant} to approximate the root of \cref{eq:qone}}
+			\label{tab:qtwo}
+		\end{center}
+	\end{table}

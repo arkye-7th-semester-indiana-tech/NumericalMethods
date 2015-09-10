@@ -1,0 +1,49 @@
+\section{Fixed-Points}
+
+	Fixed Point $(p)$ is when the below function is satisfied:
+
+	\begin{equation}
+		f(p) = p
+	\label{eq:fixedpoint}
+	\end{equation}
+
+	\subsection{Question (a)}
+		
+		Equation:
+
+		\begin{equation}
+			f(x) = xln(x+1)
+		\label{eq:qfivea}
+		\end{equation}
+
+		By simple deduction we discover the only fixed point of \cref{eq:qfivea}:
+
+		\begin{align}
+			f(0) &= 0*ln(0+1)& \notag \\
+			&= 0*0 = 0& \notag \\
+			p &= 0&
+			\label{eq:qfiveaded}
+		\end{align}
+
+	\subsection{Question (b)}
+		
+		Equation:
+
+		\begin{equation}
+			f(x) = \sqrt{x+1}
+		\label{eq:qfiveb}
+		\end{equation}
+
+		Testing \cref{eq:qfiveb} with $x = 1$ and $x = 2$:
+
+		\begin{equation}
+			f(1) = \sqrt{1+1} = \sqrt{2} > 1
+		\label{eq:qfivebone}
+		\end{equation}
+
+		\begin{equation}
+			f(2) = \sqrt{2+1} = \sqrt{3} < 2
+		\label{eq:qfivebtwo}
+		\end{equation}
+
+		By deduction, we can affirm the \cref{eq:qfiveb} do not has any fixed point. After multiple attempts to identify a more closely approximation of a possible $p$ using GNU Octave, the value of $x = 1.61803398874989$ is a approximated fixed point of \cref{eq:qfiveb} by 14 significant digits.

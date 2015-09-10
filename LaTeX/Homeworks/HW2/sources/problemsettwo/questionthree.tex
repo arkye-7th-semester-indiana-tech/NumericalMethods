@@ -1,0 +1,133 @@
+\section{Newton`s Method}
+
+	Newton`s Method:
+
+	\begin{equation}
+		x_{k+1} = x_{k} - \frac{y_{k}}{y'_{k}}
+	\label{eq:newton}
+	\end{equation}
+
+	\subsection{Question (a)}
+		
+		Equations:
+
+		\begin{equation}
+			y(x) = x^3 + x - 1
+		\label{eq:qthreeaone}
+		\end{equation}
+
+		\begin{equation}
+			y'(x) = 3x^2 + 1
+		\label{eq:qthreeaoned}
+		\end{equation}
+
+		Discovering the value of \cref{eq:qthreeaone} as $x = 0$ and $x = 1$ in order to discover the closest integer initial approximation.
+
+		\begin{equation}
+			y(0) = 0^3 + 0 - 1 = -1
+		\label{eq:qthreeaxzero}
+		\end{equation}
+
+		\begin{equation}
+			y(1) = 1^3 + 1 - 1 = 1
+		\label{eq:qthreeaxone}
+		\end{equation}
+
+		As can be seen in \cref{eq:qthreeaxzero} and \cref{eq:qthreeaxone}, both values have the same approximation for the root. Using $x_{0} = 1$ and \cref{eq:qthreeaone} as $y$ to discover $x_{1}$ in \cref{eq:newton}:
+	
+		\begin{align}
+			x_{1} &= 1 - \frac{1^3 + 1 - 1}{3*1^2 + 1}& \notag \\
+			&= 1 - \frac{1}{4}& \notag \\
+			&= 1 - 0.25& \notag \\
+			&= 0.75&
+			\label{eq:qthreeaxones}
+		\end{align}
+
+		The next iterations was made using \emph{short g} format on GNU Octave and their results are described in \cref{tab:qthreea}. The option \emph{short g} format uses 5 significant figures in 10 maximum characters.
+
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{|c||c||c|c|}
+					\hline
+					\textbf{$k$} & \textbf{$x_{k}$} & \textbf{$x_{k+1}$} & \textbf{$y(x_{k+1})$} \\ \hline
+					0 & 1 & 0.75 & 0.17188  \\ \hline
+					1 & 0.75 & 0.68605 & 0.008941  \\ \hline
+					2 & 0.68605 & 0.68234 & 2.8231e-05  \\ \hline
+					3 & 0.68234 & 0.68233 & 2.8399e-10  \\ \hline
+					4 & 0.68233 & 0.68233 & 2.2204e-15  \\ \hline
+				\end{tabular}
+				\caption{Results of 5 iterations of the \cref{eq:newton} to approximate the root of \cref{eq:qthreeaone}}
+				\label{tab:qthreea}
+			\end{center}
+		\end{table}
+
+	\subsection{Question (b)}
+		
+		Equations:
+
+		\begin{equation}
+			y(x) = x^5 - 3x + 3
+		\label{eq:qthreebone}
+		\end{equation}
+
+		\begin{equation}
+			y'(x) = 5x^4 - 3
+		\label{eq:qthreeboned}
+		\end{equation}
+
+		Discovering the value of \cref{eq:qthreebone} as $x = -2$, $x = -1$, $x = 0$, $x = 1$, and $x = 2$ in order to discover the closest integer initial approximation.
+
+		\begin{equation}
+			y(-1) = (-2)^5 - 3*(-2) + 3 = -23
+		\label{eq:qthreebxmtwo}
+		\end{equation}
+
+		\begin{equation}
+			y(-1) = (-1)^5 - 3*(-1) + 3 = 5
+		\label{eq:qthreebxmone}
+		\end{equation}
+
+		\begin{equation}
+			y(0) = 0^5 - 3*0 + 3 = 3
+		\label{eq:qthreebxzero}
+		\end{equation}
+
+		\begin{equation}
+			y(1) = 1^5 - 3*1 + 3 = 1
+		\label{eq:qthreebxone}
+		\end{equation}
+
+		\begin{equation}
+			y(2) = 2^5 - 3*2 + 3 = 29
+		\label{eq:qthreebxtwo}
+		\end{equation}
+
+		As can be seen, \cref{eq:qthreebxone} is the closest integer approximation of the root of \cref{eq:qthreebone}. Using $x_{0} = 1$ and \cref{eq:qthreebone} as $y$ to discover $x_{1}$ in \cref{eq:newton}:
+	
+		\begin{align}
+			x_{1} &= 1 - \frac{1^5 - 3*1 + 3}{5*(1^4) - 3}& \notag \\
+			&= 1 - \frac{1}{2}& \notag \\
+			&= 1 - 0.5& \notag \\
+			&= 0.5&
+			\label{eq:qthreebxones}
+		\end{align}
+
+		The next iterations was made using \emph{short g} format on GNU Octave and their 4 initial results and 2 last results are described in \cref{tab:qthreeb}. The option \emph{short g} format uses 5 significant figures in 10 maximum characters.
+
+		\begin{table}[H]
+			\begin{center}
+				\begin{tabular}{|c||c||c|c|}
+					\hline
+					\textbf{$k$} & \textbf{$x_{k}$} & \textbf{$x_{k+1}$} & \textbf{$y(x_{k+1})$} \\ \hline
+					0 & 1 & 0.5 & 1.5312  \\ \hline
+					1 & 0.5 & 1.0698 & 1.1917  \\ \hline
+					2 & 1.0698 & 0.73391 & 1.0112  \\ \hline
+					3 & 0.73391 & 1.3865 & 3.9648  \\ \hline
+					... & ... & ... & ...  \\ \hline
+					135 & -1.4963 & -1.4958 & -1.082e-05  \\ \hline
+					136 & -1.4958 & -1.4958 & -8.0735e-12  \\ \hline
+				\end{tabular}
+				\caption{137 iterations was needed to approximate to the root of \cref{eq:qthreebone} with a diference inferior than $10^{-6}$ using Newton`s Method}
+				\label{tab:qthreeb}
+			\end{center}
+		\end{table}

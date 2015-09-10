@@ -1,0 +1,62 @@
+\section{MATLAB Practice}
+	Equation:
+	
+	\begin{equation}
+		 \frac{\rho_{f}}{3}h^{3} - R \rho_{f}h^{2} + \frac{4}{3}R^{3} \rho_{0} = 0
+	\label{eq:qseven}
+	\end{equation}
+
+	Using $R = 5$ cm, $\rho_{0} = 0.120$ g/cm$^3$, $\rho_{f} = 0.890$ g/cm$^3$, and a tolerance of $10^{-8}$.
+
+	\begin{equation}
+		 \frac{0.890}{3}*h^{3} - 4.45*h^{2} + 20 = 0 \notag \\
+		\label{eq:qsevenvar}
+	\end{equation}
+
+	Looking at the graph of the function \cref{eq:qsevenvar} using the Bisection script cited below, the two nearest integers which surrounds the root are: $[14, 15]$.
+
+	\subsection{Question (a)}
+
+		Using Bisection:
+
+		\begin{itemize} 
+		 	\item{Script At: X}
+		 	\item{Call for Function At: X}
+		 	\item{Number of Iterations: 29}
+		 	\item{Final Result: 14.6874883808}
+		\end{itemize}
+
+	\subsection{Question (b)}
+
+		Regula Falsi:
+
+		\begin{itemize} 
+		 	\item{Script At: X}
+		 	\item{Call for Function At: X}
+		 	\item{Number of Iterations: 8}
+		 	\item{Final Result: 14.6874883787}
+		\end{itemize}
+
+	\subsection{Question (c)}
+
+		Secant:
+
+		\begin{itemize} 
+		 	\item{Script At: X}
+		 	\item{Call for Function At: X}
+		 	\item{Number of Iterations: 5}
+		 	\item{Final Result: 14.6874883777}
+		\end{itemize}
+
+	\subsection{Question (d)}
+		
+		Newton`s:
+
+		\begin{itemize} 
+		 	\item{Script At: X}
+		 	\item{Call for Function At: X}
+		 	\item{Number of Iterations (Using Initial Value 14): 6}
+			\item{Final Result (Using Initial Value 14): 14.6874883788}
+			\item{Number of Iterations (Using Initial Value 15): 5}
+		 	\item{Final Result (Using Initial Value 15): 14.6874883788}
+		\end{itemize}
