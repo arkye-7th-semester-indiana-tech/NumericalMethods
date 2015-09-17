@@ -1,0 +1,48 @@
+\section{Bisection Method}
+
+\begin{align}
+	m = \frac{b+a}{2}
+	\label{eq:bisection}
+\end{align}
+
+	\noindent If $y < 0$, $a = m$; \\
+	Else if $y > 0$, $b = m$; \\
+	Else $y = 0$. \\
+
+\section{Regula Falsi}
+
+\begin{align}
+	x = b - y_{b}\frac{b - a}{y_{b} - y_{a}}
+	\label{eq:regulafalsi}
+\end{align}
+
+	\noindent If $y < 0$, $a = x$; \\
+	Else if $y > 0$, $b = x$; \\
+	Else $y = 0$. \\
+
+\section{Secant Method}
+
+\begin{align}
+	x_{n+1} = x_{n} - \frac{f(x_{n})*(x_{n}-x_{n-1})}{f(x_{n})-f(x_{n-1})}
+	\label{eq:secant}
+\end{align}
+
+\section{Newton`s Method}
+
+\begin{align}
+	x_{n+1} = x_{n} - \frac{y(n)}{y'(n)}
+	\label{eq:newton}
+\end{align}
+
+\section{Fixed-Point}
+
+\begin{align}
+	f(p) = p \\
+	x = f(x) = 0
+\end{align}
+
+Find a convenient $x = g(x)$, and use:
+
+\begin{align}
+	x_{n+1} = g(x_{n})
+\end{align}
