@@ -1,0 +1,121 @@
+\section{Root, Multiplicity, and Newton's Method}
+	
+	\begin{align}
+		f(x) &= x^{4} - x^{3} - 3x^{2} + 5x - 2&
+	\label{eq:34}
+	\end{align}
+
+	Verifying if $x=1$ is a root of \cref{eq:34}:
+
+	\begin{align}
+		f(1) &= 1^{4} - 1^{3} - 3*1^{2} + 5*1 - 2& &;&
+		f(1) &= 1 - 1 - 3 + 5 - 2 = 0& 
+	\label{eq:341x}
+	\end{align}
+
+	$x=1$ is a root of \cref{eq:34}, as can be seen in \cref{eq:341x}. To discover the multiplicity, it is necessary to discover how many derivates of \cref{eq:34} have $x=1$ as root:
+
+	\begin{align}
+		f(x) &= x^{4} - x^{3} - 3x^{2} + 5x - 2& \notag \\
+		f'(x) &= 4x^{3} - 3x^{2} - 6x + 5&
+	\label{eq:34derivate}
+	\end{align}
+
+	Verifying if $x=1$ is a root of \cref{eq:34derivate}:
+
+	\begin{align}
+		f'(1) &= 4*1^{3} - 3*1^{2} - 6*1 + 5& \notag \\
+		f'(1) &= 4 - 3 - 6 + 5 = 9 - 9 = 0 &
+	\label{eq:34derivate1x}
+	\end{align}
+
+	\begin{align}
+		f'(x) &= 4x^{3} - 3x^{2} - 6x + 5& \notag \\
+		f''(x) &= 12x^{2} - 6x - 6&
+	\label{eq:342ndderivate}
+	\end{align}
+
+	Verifying if $x=1$ is a root of \cref{eq:342ndderivate}:
+
+	\begin{align}
+		f''(1) &= 12*1^{2} - 6*1 - 6& \notag \\
+		f''(1) &= 12 - 6 - 6 = 0& \notag \\
+	\label{eq:332ndderivate1x}
+	\end{align}
+
+	\begin{align}
+		f''(x) &= 12x^{2} - 6x - 6& \notag \\
+		f'''(x) &= 24x - 6&
+	\label{eq:343rdderivate}
+	\end{align}
+
+	Verifying if $x=1$ is a root of \cref{eq:343rdderivate}:
+
+	\begin{align}
+		f'''(1) &= 24x - 6& \notag \\
+		f'''(1) &= 24*1 - 6 = 18 \neq 0&
+	\label{eq:343rdderivate1x}
+	\end{align}
+
+	The multiplicity of $x = \alpha = 1$ in \cref{eq:34} is $3$.
+
+	\subsection{Question (a): Newton's Method}
+
+		\begin{equation}
+			x_{k+1} = x_{k} - \frac{y_{k}}{y'_{k}}
+		\label{eq:newton}
+		\end{equation}
+
+		Using $x_{0} = 0.5$ and \cref{eq:34} as $y$ to discover $x_{1}$, $x_{2}$, and $x_{3}$ in \cref{eq:newton}:
+
+		\begin{align}
+			x_{1} &= 0.5 - \frac{0.5^{4} - 0.5^{3} - 3*0.5^{2} + 5*0.5 - 2}{4*0.5^{3} - 3*0.5^{2} - 6*0.5 + 5}& \notag \\
+			&= 0.5 + \frac{0.3125}{1.75} & \notag \\
+			&= 0.6786&
+			\label{eq:34ax1}
+		\end{align}
+
+		\begin{align}
+			x_{2} &= 0.6786 - \frac{0.6786^{4} - 0.6786^{3} - 3*0.6786^{2} + 5*0.6786 - 2}{4*0.6786^{3} - 3*0.6786^{2} - 6*0.6786 + 5}& \notag \\
+			&= 0.6786 - \frac{0.0890}{0.7970} & \notag \\
+			&= 0.7902&
+			\label{eq:34ax2}
+		\end{align}
+
+		\begin{align}
+			x_{3} &= 0.7902 - \frac{0.7902^{4} - 0.7902^{3} - 3*0.7902^{2} + 5*0.7902 - 2}{4*0.7902^{3} - 3*0.7902^{2} - 6*0.7902 + 5}& \notag \\
+			&= 0.7902 + \frac{0.0258}{0.3593} & \notag \\
+			&= 0.8619&
+			\label{eq:34ax3}
+		\end{align}
+
+	\subsection{Question (a): $1^{st}$ Modification of Newton's Method}
+
+		\begin{equation}
+			x_{k+1} = x_{k} - \frac{m*y_{k}}{y'_{k}}
+		\label{eq:1stnewton}
+		\end{equation}
+
+		Using $x_{0} = 0.5$, $m = 3$, and \cref{eq:34} as $y$ to discover $x_{1}$, $x_{2}$, and $x_{3}$ in \cref{eq:newton}:
+
+		\begin{align}
+			x_{1} &= 0.5 - 3*\frac{0.5^{4} - 0.5^{3} - 3*0.5^{2} + 5*0.5 - 2}{4*0.5^{3} - 3*0.5^{2} - 6*0.5 + 5}& \notag \\
+			&= 0.5 + 3*\frac{0.3125}{1.75} & \notag \\
+			&= 0.5 + \frac{0.9375}{1.75} & \notag \\
+			&= 1.0357&
+			\label{eq:34bx1}
+		\end{align}
+
+		\begin{align}
+			x_{2} &= 1.0357 - 3*\frac{1.0357^{4} - 1.0357^{3} - 3*1.0357^{2} + 5*1.0357 - 2}{4*1.0357^{3} - 3*1.0357^{2} - 6*1.0357 + 5}& \notag \\
+			&= 1.0357 - \frac{0.0004}{0.0117} & \notag \\
+			&= 1.0001&
+			\label{eq:34bx2}
+		\end{align}
+
+		\begin{align}
+			x_{3} &= 1.0001 - \frac{1.0001^{4} - 1.0001^{3} - 3*1.0001^{2} + 5*1.0001 - 2}{4*1.0001^{3} - 3*1.0001^{2} - 6*1.0001 + 5}& \notag \\
+			&= 1.0001 + \frac{2.4436 * 10^{-11}}{1.7518 * 10^{-7}} & \notag \\
+			&= 1&
+			\label{eq:34bx3}
+		\end{align}

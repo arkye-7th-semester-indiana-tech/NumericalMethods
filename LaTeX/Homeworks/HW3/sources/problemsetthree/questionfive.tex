@@ -1,0 +1,32 @@
+\section{Error Bound}
+
+	\begin{equation}
+		\lim_{x\to\infty} \frac{|e_{n+1}|}{|e_{n}|^{R}} = \beta
+	\label{eq:errorbound}
+	\end{equation}
+
+	Discovering $e_{1}$, $e_{2}$, and $e_{3}$ using $R = 2$, $\beta = 0.5$, and $e_{0} = 0.25$ in the \cref{eq:errorbound}:
+
+	\begin{align}
+		|e_{1}| &\approx \beta*|e_{0}|^{R}& \notag \\
+		|e_{1}| &\approx 0.5*|0.25|^{2}& \notag \\
+		|e_{1}| &\approx 0.5*0.6250& \notag \\
+		|e_{1}| &\approx 0.0312&
+	\label{eq:351e}
+	\end{align}
+
+	\begin{align}
+		|e_{2}| &\approx \beta*|e_{1}|^{R}& \notag \\
+		|e_{2}| &\approx 0.5*|0.0312|^{2}& \notag \\
+		|e_{2}| &\approx 0.5*0.0977& \notag \\
+		|e_{2}| &\approx 0.0488&
+	\label{eq:352e}
+	\end{align}
+
+	\begin{align}
+		|e_{3}| &\approx \beta*|e_{2}|^{R}& \notag \\
+		|e_{3}| &\approx 0.5*|0.0488|^{2}& \notag \\
+		|e_{3}| &\approx 0.5*0.0024 \notag \\
+		|e_{3}| &\approx 0.0012&
+	\label{eq:353e}
+	\end{align}
