@@ -1,0 +1,63 @@
+\section{Comparisson of Convergence's Velocity}
+
+	\subsection{Question (a)}
+		\begin{align}
+			x_{n+1} &= x_{n}+1-\frac{x_{n}^{2}}{5}&
+		\label{eq:45a}
+		\end{align}
+
+		Assuming $x= \sqrt{5}$ is a fixed point of \cref{eq:45a}. To discover the order of convergence, it is necessary to discover how many derivates of \cref{eq:45a} have $x=\sqrt{5}$ as root:
+
+		\begin{align}
+			f(x) &= x+1-\frac{x^{2}}{5}& \notag \\
+			f'(x) &= 1 - \frac{2x}{5}&
+		\label{eq:45aderivate}
+		\end{align}	
+
+		Verifying if $x=\sqrt{5}$ is a root of \cref{eq:45aderivate}:
+
+		\begin{align}
+			f'(\sqrt{5}) &= 1 - \frac{2\sqrt{5}}{5} \neq 0&
+		\label{eq:45aderivatesqrt5x}
+		\end{align}
+		
+		The order of convergence of $x = \sqrt{5}$ in \cref{eq:45a} is $1$.
+
+	\subsection{Question (b)}
+		\begin{align}
+			x_{n+1} &= \frac{x_{n}^{2}+5}{2x_{n}}&
+		\label{eq:45b}
+		\end{align}
+
+		Assuming $x= \sqrt{5}$ is a fixed point of \cref{eq:45b}. To discover the order of convergence, it is necessary to discover how many derivates of \cref{eq:45b} have $x=\sqrt{5}$ as root:
+
+		\begin{align}
+			f(x) &= \frac{x^{2}+5}{2x}& \notag \\
+			f(x) &= \frac{x^{2}}{2x} + \frac{5}{2x}& \notag \\
+			f(x) &= \frac{x}{2} + \frac{5}{2x}& \notag \\
+			f'(x) &= \frac{1}{2} - \frac{5}{2x^2}&
+		\label{eq:45bderivate}
+		\end{align}
+
+		Verifying if $x=\sqrt{5}$ is a root of \cref{eq:45bderivate}:
+
+		\begin{align}
+			f'(\sqrt{5}) &= \frac{1}{2} - \frac{5}{2\left(\sqrt{5}\right)^2}& \notag \\
+			f'(\sqrt{5}) &= \frac{1}{2} - \frac{5}{2*5} = \frac{1}{2} - \frac{1}{2} = 0&
+		\label{eq:44bderivatesqrt5x}
+		\end{align}
+
+		\begin{align}
+			f'(x) &= \frac{1}{2} - \frac{5}{2x^2}& \notag \\
+			f''(x) &= \frac{5}{x^3}&
+		\label{eq:45b2ndderivate}
+		\end{align}
+
+		Verifying if $x=\sqrt{5}$ is a root of \cref{eq:45b2ndderivate}:
+
+		\begin{align}
+			f''(\sqrt{5}) &= \frac{5}{\left(\sqrt{5}\right)^3} \neq 0& \notag \\
+		\label{eq:45b2ndderivatesqrt5x}
+		\end{align}
+
+		The order of convergence of $x = \sqrt{5}$ in \cref{eq:45b} is $2$. The \cref{eq:45b} converges faster than \cref{eq:45a}.

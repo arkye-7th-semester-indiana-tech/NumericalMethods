@@ -1,0 +1,45 @@
+\section{Rate of Convergence}
+
+	\begin{align}
+		x_{n+1} &= 0.4+x_{n}-0.1x_{n}^{2}, n \ge 0&
+	\label{eq:44}
+	\end{align}
+
+	Verifying if $x=2$ is a fixed point of \cref{eq:44}:
+
+	\begin{align}
+		f(2) &= 0.4+2-0.1*2^{2}& \notag \\
+		f(2) &= 2.4 -0.4 = 2&
+	\label{eq:442x}
+	\end{align}
+
+	$x=2$ is a fixed point of \cref{eq:44}, as can be seen in \cref{eq:442x}. To discover the order of convergence, it is necessary to discover how many derivates of \cref{eq:44} have $x=2$ as root:
+
+	\begin{align}
+		f(x) &= 0.4+x-0.1x^{2}& \notag \\
+		f'(x) &= 1 - 0.2x&
+	\label{eq:44derivate}
+	\end{align}
+
+	Verifying if $x=2$ is a root of \cref{eq:44derivate}:
+
+	\begin{align}
+		f'(1) &= 1 - 0.2*2& \notag \\
+		&= 1 - 0.4 = 0.6 \neq 0& \notag \\
+	\label{eq:44derivate2x}
+	\end{align}
+
+	The order of convergence of $x = 2$ in \cref{eq:44} is $1$. To determine the rate of convergence, or the asymptotic error constant, it is necessary to discover the result of:
+
+	\begin{align}
+		rate &= \frac{g^{(R)}(\alpha)}{R!}&
+	\label{eq:rate}
+	\end{align}
+
+	Since $R = 1$ and $\alpha = 2$, the rate of convergence is:
+
+	\begin{align}
+		rate &= \frac{g'(2)}{1!}& \notag \\
+		&= \frac{0.6}{1!} = 0.6&
+	\label{eq:44rate}
+	\end{align}

@@ -1,0 +1,53 @@
+\section{Order of Convergence}
+
+	\begin{align}
+		g(x) &= \frac{1}{2}\left(x+\frac{a}{x}\right)&
+	\label{eq:43}
+	\end{align}
+
+	Verifying if $x=\sqrt{a}$ is a fixed point of \cref{eq:43}:
+
+	\begin{align}
+		g(\sqrt{a}) &= \frac{1}{2}\left(\sqrt{a}+\frac{a}{\sqrt{a}}\right)& \notag \\
+		&= \frac{1}{2}\left(\frac{(\sqrt{a})^{2}+a}{\sqrt{a}}\right)& \notag \\
+		&= \frac{2a}{2\sqrt{a}}& \notag \\
+		&= \frac{2a}{2\sqrt{a}}& \notag \\
+		&= \frac{a^{1}}{a^{1/2}}& \notag \\
+		&= a^{1/2} = \sqrt{a}&
+	\label{eq:43sqrtax}
+	\end{align}
+
+	$x=\sqrt{a}$ is a fixed point of \cref{eq:43}, as can be seen in \cref{eq:43sqrtax}. To discover the order of convergence, it is necessary to discover how many derivates of \cref{eq:43} have $x=\sqrt{a}$ as root:
+
+	\begin{align}
+		g(x) &= \frac{1}{2}\left(x+\frac{a}{x}\right)& \notag \\
+		&= \frac{x}{2} + \frac{a}{2x}& \notag \\
+		g'(x) &= \frac{1}{2} - \frac{a}{2x^{2}}&
+	\label{eq:43derivate}
+	\end{align}
+
+	Verifying if $x=\sqrt{a}$ is a root of \cref{eq:43derivate}:
+
+	\begin{align}
+		g'(\sqrt{a}) &= \frac{1}{2} - \frac{a}{2\left(\sqrt{a}\right)^{2}}& \notag \\
+		&= \frac{1}{2} - \frac{a}{2a}& \notag \\
+		&= \frac{1}{2} - \frac{1}{2} = 0&
+	\label{eq:33derivatesqrtax}
+	\end{align}
+
+	\begin{align}
+		g'(x) &= \frac{1}{2} - \frac{a}{2x^{2}}& \notag \\
+		g''(x) &= \frac{a}{x^{3}}&
+	\label{eq:432ndderivate}
+	\end{align}
+
+	Verifying if $x=\sqrt{a}$ is a root of \cref{eq:432ndderivate}:
+
+	\begin{align}
+		g''(\sqrt{a}) &= \frac{a}{\left(\sqrt{a}\right)^{3}}& \notag \\
+		&= \frac{a}{a\sqrt{a}}& \notag \\
+		&= \frac{1}{\sqrt{a}} \neq 0&
+	\label{eq:432ndderivatesqrtax}
+	\end{align}
+
+	The order of convergence of $x = \sqrt{a}$ in \cref{eq:43} is $2$.
