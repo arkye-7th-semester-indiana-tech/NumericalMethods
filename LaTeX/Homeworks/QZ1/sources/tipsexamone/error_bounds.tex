@@ -1,0 +1,34 @@
+\section{Bisection Error Bound}
+
+	\begin{align}
+		|E| \leq \frac{b-a}{2^{n}}
+		\label{eq:bisectionerror}
+	\end{align}
+
+	To discover the minimum number of iterations needed to ensure a required tolerance $(T)$:
+
+	\begin{align}
+		\lceil n \rceil \geq \frac{\ln{\frac{b-a}{T}}}{\ln{2}}
+		\label{eq:bisectiontolerance}
+	\end{align}
+
+\section{Fixed-Point Error Bound}
+
+	\begin{align}
+		|E| \leq \frac{k^{n}}{1-k}|x_{0} - x_{1}|
+		\label{eq:fperror}
+	\end{align}
+
+	To discover the minimum number of iterations needed to ensure a required tolerance $(T)$:
+
+	\begin{align}
+		\lceil n \rceil \geq \frac{\ln{\frac{T(1-k)}{|x_{0} - x_{1}|}}}{\ln{k}}
+		\label{eq:fptolerance}
+	\end{align}
+
+	To discover the order of convergence, for an $x = \alpha$ as fixed point of $g$.
+
+	\begin{align}
+		\lim_{n\to\inf} \frac{|e_{n+1}|}{|e_{n}|} = \frac{g^{(R)}(\alpha)}{R!}
+		\label{eq:fptolerance}
+	\end{align}

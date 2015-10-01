@@ -1,0 +1,22 @@
+\section{Fixed-Point Theorem}
+
+	If $g(x)$ is continuous on $[a,b]$ and $g(x) \in [a,b] \forall x \in [a,b]$. Then, $g$ is guaranted to have at least one fixed-point in $[a,b]$.
+	
+	Moreover, if $|g'(x)| \leq k < 1 \forall x \in [a,b]$, then the fixed-point is unique.
+
+	Step one: Verify the boundaries. If positive, $g$ have at least one fixed-point. If negative, $g$ does not have fixed points. Don't forget to check if $g$ is monotone.
+	
+	\begin{align}
+		g(a) &\in [a,b]?& \\
+		g(b) &\in [a,b]?& \\
+		g'(x) &\geq 0 \forall x \in [a,b]?, \ or& \notag \\
+		g'(x) &\leq 0 \forall x \in [a,b]?&
+		\label{eq:fpone}
+	\end{align}
+
+	Step two: Verify if the modular derivated function have maximum value less than 1. If $|g'(x)| > 1$, the sequence will divere. Otherwise, the fixed point is unique and can be discovered by the iterative scheme.
+
+	\begin{align}
+		x_{n+1} = g(x_{n}), \forall x_{0} \in [a,b]
+		\label{eq:fptwo}
+	\end{align}
