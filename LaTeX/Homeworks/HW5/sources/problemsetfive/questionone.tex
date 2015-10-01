@@ -1,0 +1,183 @@
+\section{Doolittle Factorization}
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				8 & 5 & 1 \\[0.3em]
+				3 & 7 & 4 \\[0.3em]
+				2 & 3 & 9
+			\end{bmatrix}&
+	\label{eq:51}
+	\end{align}
+
+	Starting defining the Doolittle Factorization of \cref{eq:51}:
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				8 & 5 & 1 \\[0.3em]
+				3 & 7 & 4 \\[0.3em]
+				2 & 3 & 9
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				1 & 0 & 0 \\[0.3em]
+				l_{21} & 1 & 0 \\[0.3em]
+				l_{31} & l_{32} & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				U_{11} & U_{12} & U_{13} \\[0.3em]
+				0 & U_{22} & U_{23} \\[0.3em]
+				0 & 0 & U_{33}
+			\end{bmatrix}&
+	\end{align}
+	\begin{align}
+		l_{11}U_{11} &= A_{11}& \notag \\
+		1*U_{11} &= 8& \notag \\
+		&= 8& \\
+		l_{11}U_{12} &= A_{12}& \notag \\
+		1*U_{12} &= 5& \notag \\
+		&= 5& \\
+		l_{11}*U_{13} &= A_{13}& \notag \\
+		1*U_{13} &= 1& \notag \\
+		&= 1&
+	\end{align}
+	\begin{align}
+		l_{21}U_{11} &= A_{21}& \notag \\
+		l_{21}*8 &= 3& \notag \\
+		l_{21} &= \frac{3}{8}& \\
+		\notag \\
+		l_{31}U_{11} &= A_{31}& \notag \\
+		l_{31}*8 &= 2& \notag \\
+		l_{31} &= \frac{2}{8} = \frac{1}{4}& \\
+		\notag \\
+		l_{21}U_{12} + l_{22}U_{22} &= A_{22}& \notag \\
+		\frac{3}{8}*5 + 1*U_{22} &= 7& \notag \\
+		U_{22} &= 7 - 5*\frac{3}{8}& \notag \\
+		&= \frac{56 - 15}{8} = \frac{41}{8}& \\
+		\notag \\
+		\notag \\
+		l_{21}U_{13} + l_{22}U_{23} &= A_{23}& \notag \\
+		\frac{3}{8}*1 + 1*U_{23} &= 4& \notag \\
+		U_{23} &= 4 - \frac{3}{8}& \notag \\
+		&= \frac{32 - 3}{8} = \frac{29}{8}& \\
+		\notag \\
+		l_{31}U_{12} + l_{32}U_{22} &= A_{32}& \notag \\
+		\frac{1}{4}*5 + l_{32}*\frac{41}{8} &= 3& \notag \\
+		l_{32} &= \frac{3 - \frac{5}{4}}{\frac{41}{8}}& \notag \\
+		&= \frac{\frac{12 - 5}{4}}{\frac{41}{8}} = \frac{7}{4}*\frac{8}{41} = \frac{56}{164} = \frac{14}{41}&
+	\end{align}
+	\begin{align}
+		l_{31}U_{13} + l_{32}U_{23} + l_{33}U_{33} &= A_{33}& \notag \\
+		\frac{1}{4}*1 + \frac{14}{41}*\frac{29}{8} + 1*U_{33} &= 9& \notag \\
+		U_{33} &= 9 - \left(\frac{1}{4} + \frac{14}{41}*\frac{29}{8}\right)& \notag \\
+		&= 9 - \frac{1}{4} - \frac{406}{328}& \notag \\
+		&= \frac{36 - 1}{4} - \frac{203}{164}& \notag \\
+		&= \frac{1435 - 203}{164} = \frac{1232}{164} = \frac{308}{41}&
+	\label{eq:51terms}
+	\end{align}
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				8 & 5 & 1 \\[0.3em]
+				3 & 7 & 4 \\[0.3em]
+				2 & 3 & 9
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				1 & 0 & 0 \\[0.3em]
+				\frac{3}{8} & 1 & 0 \\[0.3em]
+				\frac{1}{4} & \frac{14}{41} & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				8 & 5 & 1 \\[0.3em]
+				0 & \frac{41}{8} & \frac{29}{8} \\[0.3em]
+				0 & 0 & \frac{308}{41}
+			\end{bmatrix}&
+	\label{eq:51doolittle}
+	\end{align}
+
+	Solving:
+
+	\begin{align}
+		Ax &= B& \\
+		Ax &= \begin{bmatrix}
+				6 \\[0.3em]
+				1 \\[0.3em]
+				-2
+			\end{bmatrix}&
+	\label{eq:51ax}
+	\end{align}
+
+	Forward Substitution:
+
+	\begin{align}
+		LY &= B& \\
+		\begin{bmatrix}
+			1 & 0 & 0 \\[0.3em]
+			\frac{3}{8} & 1 & 0 \\[0.3em]
+			\frac{1}{4} & \frac{14}{41} & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			y_{1} \\[0.3em]
+			y_{2} \\[0.3em]
+			y_{3}
+		\end{bmatrix} &= \begin{bmatrix}
+				6 \\[0.3em]
+				1 \\[0.3em]
+				-2
+			\end{bmatrix}& \notag \\
+		\begin{bmatrix}
+			y_{1} \\[0.3em]
+			\frac{3}{8}y_{1} + y_{2} \\[0.3em]
+			\frac{1}{4}y_{1} + \frac{14}{41}y_{2} + y_{3}
+		\end{bmatrix} &= \begin{bmatrix}
+				6 \\[0.3em]
+				1 \\[0.3em]
+				-2
+			\end{bmatrix}& \notag \\
+		y_{1} &= 6& \\
+		y_{2} &= 1 - \frac{9}{4} = - \frac{5}{4}& \\
+		y_{3} &= - 2 - \frac{3}{2} + \frac{70}{164}& \notag \\
+		&= - \frac{7}{2} + \frac{35}{82} = \frac{35-287}{82} = -\frac{252}{82} = -\frac{126}{41}&
+	\label{eq:51y}
+	\end{align}
+
+	Backward Substitution:
+
+	\begin{align}
+		UX &= Y& \\
+		\begin{bmatrix}
+			8 & 5 & 1 \\[0.3em]
+			0 & \frac{41}{8} & \frac{29}{8} \\[0.3em]
+			0 & 0 & \frac{308}{41}
+		\end{bmatrix}
+		\begin{bmatrix}
+			x_{1} \\[0.3em]
+			x_{2} \\[0.3em]
+			x_{3}
+		\end{bmatrix} &= \begin{bmatrix}
+				6 \\[0.3em]
+				-\frac{5}{4} \\[0.3em]
+				-\frac{126}{41}
+			\end{bmatrix}& \notag \\
+		\begin{bmatrix}
+			8x_{1} + 5x_{2} + x_{3} \\[0.3em]
+			\frac{41}{8}x_{2} + \frac{29}{8}x_{3} \\[0.3em]
+			\frac{308}{41}x_{3}
+		\end{bmatrix} &= \begin{bmatrix}
+				6 \\[0.3em]
+				-\frac{5}{4} \\[0.3em]
+				-\frac{126}{41}
+			\end{bmatrix}& \notag \\
+		x_{3} &= -\frac{41}{308}*\frac{126}{41} = -\frac{5166}{12628} = -\frac{9}{22}&
+	\end{align}
+	\begin{align}
+		x_{2} &= \frac{-\frac{5}{4} + \frac{261}{176}}{\frac{41}{8}}& \notag \\
+		&= \frac{261-220}{176}*\frac{8}{41}& \notag \\
+		&= \frac{41}{176}*\frac{8}{41}& \notag \\
+		&= \frac{328}{7216} = \frac{1}{22}& \\
+		x_{1} &= \frac{6 - \frac{5}{22} + \frac{9}{22}}{8}& \notag \\
+		&= \frac{\frac{132+4}{22}}{8}& \notag \\
+		&= \frac{\frac{136}{22}}{8}& \notag \\
+		&= \frac{136}{176} = \frac{17}{22}& \notag \\
+	\label{eq:51x}
+	\end{align}	

@@ -1,0 +1,24 @@
+\section{Possibility of Cholesky Factorization}
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				4 & 0 & -3 \\[0.3em]
+				0 & 6 & 2 \\[0.3em]
+				-3 & -2 & 7
+			\end{bmatrix}&
+	\label{eq:54}
+	\end{align}
+
+	$A$ has a unique Cholesky factorization only if it is Symmetric Positive-Definite (SPD). Verifying if \cref{eq:54} is SPD:
+
+	\begin{align}
+		A^{T} &= A& \notag \\
+		A^{T} &= \begin{bmatrix}
+				4 & 0 & -3 \\[0.3em]
+				0 & 6 & -2 \\[0.3em]
+				-3 & 2 & 7
+			\end{bmatrix} \neq A&
+	\label{eq:54T}
+	\end{align}
+
+	Since $A^{T} \neq A$, $A$ do not have a Cholesky factorization.

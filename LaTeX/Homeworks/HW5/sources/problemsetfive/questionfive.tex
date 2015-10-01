@@ -1,0 +1,168 @@
+\section{SSD \& SPD}
+
+	\subsection{Question (a)}
+		\begin{align}
+			A &= \begin{bmatrix}
+					2 & -1 & 0 \\[0.3em]
+					-1 & 4 & 2 \\[0.3em]
+					0 & 2 & 6
+				\end{bmatrix}&
+		\label{eq:55a}
+		\end{align}
+
+		Verifying if \cref{eq:55a} is SPD for $\vec{x} \neq 0$:
+
+		\begin{align}
+			A^{T} &= A& \notag \\
+			A^{T} &= \begin{bmatrix}
+					2 & -1 & 0 \\[0.3em]
+					-1 & 4 & 2 \\[0.3em]
+					0 & 2 & 6
+				\end{bmatrix} = A&
+		\label{eq:55at}
+		\end{align}
+
+		\begin{align}
+			\vec{x}^{T}A\vec{x} &> 0& \notag \\
+			\vec{x}^{T}A\vec{x} &= \begin{bmatrix}
+				x_{1} & x_{2} & x_{3}
+				\end{bmatrix}
+				\begin{bmatrix}
+					2 & -1 & 0 \\[0.3em]
+					-1 & 4 & 2 \\[0.3em]
+					0 & 2 & 6
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \\
+			&= \begin{bmatrix}
+					2x_{1} - x_{2} ; & -x_{1} + 4x_{2} + 2x_{3} ; & 2x_{2} + 6x_{3}
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \notag \\
+			& = 2x_{1}^{2} - x_{1}x_{2} - x_{1}x_{2} + 4x_{2}^{2} + 2x_{2}x_{3} + 2x_{2}x_{3} + 6x_{3}^{2}& \notag \\
+			& = 2x_{1}^{2} - 2x_{1}x_{2} + 4x_{2}^{2} + 4x_{2}x_{3} + 6x_{3}^{2}& \notag \\
+			& = \left(x_{1} - x_{2}\right)^{2} + x_{1}^{2} + 3x_{2}^{2} + 4x_{2}x_{3} + 6x_{3}^{2}& \notag \\
+			& = \left(x_{1} - x_{2}\right)^{2} + x_{1}^{2} + 2\left(x_{2} + x_{3}\right)^{2} + x_{2}^{2} + 4x_{3}^{2} > 0&
+		\label{eq:55axtax}
+		\end{align}
+
+		The \cref{eq:55a} is SPD. Verifying if it is SDD:
+
+		\begin{align}
+			\left|a_{ii}\right| &> \sum_{j=1,j \neq i}^{n} \left|a_{ij}\right|& \\
+			|2| &> |-1| + |0|& \notag \\
+			&> 1 & \\
+			|4| &> |-1| + |2|& \notag \\
+			&> 3 & \\
+			|6| &> |0| + |2|& \notag \\
+			&> 2&
+ 		\label{eq:55asdd}
+		\end{align}
+
+		\cref{eq:55a} is SDD too.
+
+	\subsection{Question (b)}
+		\begin{align}
+			B &= \begin{bmatrix}
+					1 & 2 & 0 \\[0.3em]
+					4 & 6 & -1 \\[0.3em]
+					-3 & 2 & 0
+				\end{bmatrix}&
+		\label{eq:55b}
+		\end{align}
+
+		Verifying if \cref{eq:55b} is SPD for $\vec{x} \neq 0$:
+
+		\begin{align}
+			B^{T} &= B& \notag \\
+			B^{T} &= \begin{bmatrix}
+					1 & 4 & -3 \\[0.3em]
+					2 & 6 & 2 \\[0.3em]
+					0 & -1 & 0
+				\end{bmatrix} \neq B&
+		\label{eq:55bt}
+		\end{align}
+
+		The \cref{eq:55b} is not SPD. Verifying if it is SDD:
+
+		\begin{align}
+			\left|b_{ii}\right| &> \sum_{j=1,j \neq i}^{n} \left|b_{ij}\right|& \\
+			|2| &> |1| + |0|& \notag \\
+			&> 1 & \\
+			|6| &> |4| + |-1|& \notag \\
+			&> 5 & \\
+			|0| &< |-3| + |2|& \notag \\
+			&< 5&
+ 		\label{eq:55bsdd}
+		\end{align}
+
+		\cref{eq:55b} is not SDD too.
+
+	\subsection{Question (c)}
+		\begin{align}
+			C &= \begin{bmatrix}
+					5 & -3 & 2 \\[0.3em]
+					-3 & 1 & 0 \\[0.3em]
+					2 & 0 & 0
+				\end{bmatrix}&
+		\label{eq:55c}
+		\end{align}
+
+		Verifying if \cref{eq:55c} is SPD for $\vec{x} \neq 0$:
+
+		\begin{align}
+			C^{T} &= C& \notag \\
+			C^{T} &= \begin{bmatrix}
+					5 & -3 & 2 \\[0.3em]
+					-3 & 1 & 0 \\[0.3em]
+					2 & 0 & 0
+				\end{bmatrix} = C&
+		\label{eq:55ct}
+		\end{align}
+
+		\begin{align}
+			\vec{x}^{T}C\vec{x} &> 0& \notag \\
+			\vec{x}^{T}C\vec{x} &= \begin{bmatrix}
+				x_{1} & x_{2} & x_{3}
+				\end{bmatrix}
+				\begin{bmatrix}
+					5 & -3 & 2 \\[0.3em]
+					-3 & 1 & 0 \\[0.3em]
+					2 & 0 & 0
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \\
+			&= \begin{bmatrix}
+					5x_{1} - 3x_{2} + 2x_{3}; & -3x_{1} + x_{2}; & 2x_{1}
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \notag \\
+			& = 5x_{1}^{2} - 3x_{1}x_{2} + 2x_{1}x_{3} - 3x_{1}x_{2} + x_{2}^{2} + 2x_{1}x_{3}& \notag \\
+			& = 5x_{1}^{2} - 6x_{1}x_{2} + 4x_{1}x_{3} + x_{2}^{2}& \notag \\
+			& = \left(x_{1} - x_{2}\right)^{2} + 4x_{1}^{2} - 4x_{1}x_{2} + 4x_{1}x_{3}& \notag \\
+			& = \left(x_{1} - x_{2}\right)^{2} + 4x_{1}\left(x_{1} - x_{2} + x_{3}\right)&
+		\label{eq:55cxtcx}
+		\end{align}
+
+		The \cref{eq:55c} is not SPD. Verifying if it is SDD:
+
+		\begin{align}
+			\left|c_{ii}\right| &> \sum_{j=1,j \neq i}^{n} \left|c_{ij}\right|& \\
+			|5| &= |-3| + |2|& \notag \\
+			&= 5 &
+ 		\label{eq:55csdd}
+		\end{align}
+
+		\cref{eq:55c} is not SDD too.

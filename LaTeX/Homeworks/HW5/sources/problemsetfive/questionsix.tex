@@ -1,0 +1,69 @@
+\section{SDD \& SPD with Variable}
+	\begin{align}
+		Z &= \begin{bmatrix}
+				5 & -2 & 2 \\[0.3em]
+				-2 & 6 & a \\[0.3em]
+				2 & a & 7
+			\end{bmatrix}&
+	\label{eq:56}
+	\end{align}
+
+	\subsection{Question (a)}
+
+		\begin{align}
+			\left|z_{ii}\right| &> \sum_{j=1,j \neq i}^{n} \left|z_{ij}\right|& \\
+			|5| &> |-2| + |2|& \notag \\
+			&> 4 &
+			|6| &> |-2| + |a|& \notag \\
+			a &< 6 - 2& \notag \\
+			|a| &< 4&
+			|7| &> |2| + |a|& \notag \\
+			|a| &< 7 - 2& \notag \\
+			|a| &< 5&
+			\label{eq:56a}
+		\end{align}
+
+		In order to \cref{eq:56} be SSD, $|a| < 4$.
+
+	\subsection{Question (b)}
+		\begin{align}
+			Z^{T} &= Z& \notag \\
+			Z^{T} &= \begin{bmatrix}
+					5 & -2 & 2 \\[0.3em]
+					-2 & 6 & a \\[0.3em]
+					2 & a & 7
+				\end{bmatrix} = Z&
+		\label{eq:56zt}
+		\end{align}
+
+		\begin{align}
+			\vec{x}^{T}Z\vec{x} &> 0& \notag \\
+			\vec{x}^{T}Z\vec{x} &= \begin{bmatrix}
+				x_{1} & x_{2} & x_{3}
+				\end{bmatrix}
+				\begin{bmatrix}
+					5 & -2 & 2 \\[0.3em]
+					-2 & 6 & a \\[0.3em]
+					2 & a & 7
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \\
+			&= \begin{bmatrix}
+					5x_{1} - 2x_{2} + 2x_{3}; & -2x_{1} + 6x_{2} + ax_{3} ; & 2x_{1} + ax_{2} + 7x_{3}
+				\end{bmatrix}
+				\begin{bmatrix}
+					x_{1} \\[0.3em]
+					x_{2} \\[0.3em]
+					x_{3}
+				\end{bmatrix}& \notag \\
+			& = 5x_{1}^{2} - 2x_{1}x_{2} + 2x_{1}x_{3} - 2x_{1}x_{2} + 6x_{2}^{2} + ax_{2}x_{3} + 2x_{1}x_{3} + ax_{2}x_{3} + 7x_{3}^{2} \notag \\
+			& = 5x_{1}^{2} - 4x_{1}x_{2} + 4x_{1}x_{3} + 6x_{2}^{2} + 2ax_{2}x_{3} + 7x_{3}^{2} \notag \\
+			& = 2\left(x_{1} - x_{2}\right)^{2} + 3x_{1}^{2} + 4x_{1}x_{3} + 4x_{2}^{2} + 2ax_{2}x_{3} + 7x_{3}^{2} \notag \\
+			& = 2\left(x_{1} - x_{2}\right)^{2} + 2\left(x_{1}+x_{3}\right)^{2} + x_{1}^{2} + 4x_{2}^{2} + 2ax_{2}x_{3} + 5x_{3}^{2}
+		\label{eq:56zxtzx}
+		\end{align}
+
+		In order to \cref{eq:56} be SPD, $|a| \leq 4$, $a \in \mathbb{I}^{*}$.

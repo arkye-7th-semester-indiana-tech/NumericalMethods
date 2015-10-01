@@ -1,0 +1,81 @@
+\section{Cholesky Factorization}
+		
+	\begin{align}
+		A &= \begin{bmatrix}
+				2 & -1 & 0 \\[0.3em]
+				-1 & 2 & -1 \\[0.3em]
+				0 & -1 & 2
+			\end{bmatrix}&
+	\label{eq:53}
+	\end{align}
+
+	Starting defining the Cholesky Factorization of \cref{eq:53}:
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				2 & -1 & 0 \\[0.3em]
+				-1 & 2 & -1 \\[0.3em]
+				0 & -1 & 2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				l_{11} & 0 & 0 \\[0.3em]
+				l_{21} & l_{22} & 0 \\[0.3em]
+				l_{31} & l_{32} & l_{33}
+			\end{bmatrix}
+			\begin{bmatrix}
+				l_{11} & l_{21} & l_{31} \\[0.3em]
+				0 & l_{22} & l_{32} \\[0.3em]
+				0 & 0 & l_{33}
+			\end{bmatrix}&
+	\end{align}
+	\begin{align}
+		l_{11}l_{11} &= A_{11}& \notag \\
+		l_{11}^{2} &= 2& \notag \\
+		l_{11} &= \sqrt{2}&
+	\end{align}
+	\begin{align}
+		l_{21}l_{11} &= A_{21}& \notag \\
+		l_{21}*\sqrt{2} &= -1& \notag \\
+		l_{21} &= -\frac{1}{\sqrt{2}}& \\
+		\notag \\
+		l_{31}l_{11} &= A_{31}& \notag \\
+		l_{31}*\sqrt{2} &= 0& \notag \\
+		l_{31}&= 0& \\
+		\notag \\		
+		l_{21}l_{21} + l_{22}l_{22} &= A_{22}& \notag \\
+		\left(-\frac{1}{\sqrt{2}}\right)*\left(-\frac{1}{\sqrt{2}}\right) + l_{22}^{2}  &= 2& \notag \\
+		l_{22} &= \sqrt{2 - \frac{1}{2}} = \sqrt{\frac{3}{2}}& \\
+		\notag \\
+		l_{31}l_{21} + l_{32}l_{22} &= A_{32}& \notag \\
+		0*\left(-\frac{1}{\sqrt{2}}\right) + l_{32}*\sqrt{\frac{3}{2}} &= -1& \notag \\
+		l_{32} &= -\frac{1}{\sqrt{\frac{3}{2}}} = -\sqrt{\frac{2}{3}}& \\
+		\notag \\
+		l_{31}l_{31} + l_{32}U_{32} + l_{33}U_{33} &= A_{33}& \notag \\
+		0*0 + \left(-\sqrt{\frac{2}{3}}\right)*\left(-\sqrt{\frac{2}{3}}\right) + l_{33}^{2} &= 2& \notag \\
+		l_{33} &= \sqrt{2 - \frac{2}{3}} = \sqrt{\frac{4}{3}}&
+	\label{eq:53terms}
+	\end{align}
+
+	\begin{align}
+		A &= \begin{bmatrix}
+				2 & -1 & 0 \\[0.3em]
+				-1 & 2 & -1 \\[0.3em]
+				0 & -1 & 2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\sqrt{2} & 0 & 0 \\[0.3em]
+				-\frac{1}{\sqrt{2}} & \sqrt{\frac{3}{2}} & 0 \\[0.3em]
+				0 & -\sqrt{\frac{2}{3}} & \sqrt{\frac{4}{3}}
+			\end{bmatrix}
+			\begin{bmatrix}
+				\sqrt{2} & -\frac{1}{\sqrt{2}} & 0 \\[0.3em]
+				0 & \sqrt{\frac{3}{2}} & -\sqrt{\frac{2}{3}} \\[0.3em]
+				0 & 0 & \sqrt{\frac{4}{3}}
+			\end{bmatrix}&
+	\label{eq:53cholesky}
+	\end{align}
+
+%L = [sqrt(2),0,0;-(1/sqrt(2)),sqrt(3/2),0;0,-sqrt(2/3),sqrt(4/3)]
+%LT = [sqrt(2),-(1/sqrt(2)),0;0,sqrt(3/2),-sqrt(2/3);0,0,sqrt(4/3)]

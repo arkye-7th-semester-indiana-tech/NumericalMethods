@@ -1,10 +1,10 @@
 ## Arkye's LaTeX Structure Makefile ##
 
 # Output Name
-TARGET = JonathanMoraes_NMethods_HW5
+TARGET = JonathanMoraes_NMethods_HW4
 
 # LaTeX Project Settings
-MAIN_DIR = HW5
+MAIN_DIR = HW4
 MAIN_NAME = main
 MAIN_FILE = main.tex
 
@@ -40,4 +40,4 @@ $(TARGET).pdf: $(ALL_FILES)
 	make -s clean
 
 clean:
-	rm -f *.aux *.log *.fdb_latexmk *.fls *.out
+	rm -f *.aux *.log *.fdb_latexmk *.fls
