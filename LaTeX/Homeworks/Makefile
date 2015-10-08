@@ -1,10 +1,10 @@
 ## Arkye's LaTeX Structure Makefile ##
 
 # Output Name
-TARGET = JonathanMoraes_NMethods_QZ1_EX1
+TARGET = JonathanMoraes_NMethods_HW6
 
 # LaTeX Project Settings
-MAIN_DIR = QZ1
+MAIN_DIR = HW6
 MAIN_NAME = main
 MAIN_FILE = main.tex
 

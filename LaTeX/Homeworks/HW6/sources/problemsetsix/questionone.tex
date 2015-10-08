@@ -1,0 +1,115 @@
+\section{Statements: True or False}
+
+	\subsection{Question (a)}
+	
+		\begin{itemize}
+			\item{\textbf{Sentence}: The product of two symmetric matrices is symmetric.}
+		\end{itemize}
+
+		Consider two $2x2$ symmetric matrices:
+
+		\begin{align}
+			A &= \begin{bmatrix}
+					1 & 1 \\[0.3em]
+					1 & 1
+				\end{bmatrix}& \\
+			B &= \begin{bmatrix}
+					1 & 2 \\[0.3em]
+					2 & 3
+				\end{bmatrix}&
+		\label{eq:61a}
+		\end{align}
+
+		The product of $A$ and $B$ is:
+
+		\begin{align}
+			AB &= \begin{bmatrix}
+					1 & 1 \\[0.3em]
+					1 & 1
+				\end{bmatrix}
+				\begin{bmatrix}
+					1 & 2 \\[0.3em]
+					2 & 3
+				\end{bmatrix} = 
+				\begin{bmatrix}
+					3 & 5 \\[0.3em]
+					3 & 5
+				\end{bmatrix}&
+		\label{eq:61aproduct}
+		\end{align}
+
+		Which is not symmetric. The sentence is false.
+
+	\subsection{Question (b)}
+
+		\begin{itemize}
+			\item{\textbf{Sentence}: The inverse of an invertible symmetric matrix is an invertible symmetric matrix.}
+		\end{itemize}
+
+		Consider the symmetric matrix:
+
+		\begin{align}
+			A &= \begin{bmatrix}
+					1 & 2 \\[0.3em]
+					2 & 3
+				\end{bmatrix}&
+		\label{eq:61b}
+		\end{align}
+
+		Discovering the inverse of $A$:
+
+		\begin{align}
+			A^{-1} &=
+			\begin{bmatrix}
+				-3 & 2 \\[0.3em]
+				2 & -1
+			\end{bmatrix}&
+		\label{eq:61inverse}
+		\end{align}
+
+		Which still is symmetric matrix. Discovering the inverse of $A^{-1}$:
+
+		\begin{align}
+			(A^{-1})^{-1} &=
+			\begin{bmatrix}
+				1 & 2 \\[0.3em]
+				2 & 3
+			\end{bmatrix} = A&
+		\end{align}
+
+		Which satisfies the sentence. The sentence is true.
+
+	\subsection{Question (c)}
+	
+		\begin{itemize}
+			\item{\textbf{Sentence}: If $A$ and $B$ are $n \times n$ matrices, then $(AB)^{T} = A^{T}B^{T}$.}
+		\end{itemize}
+
+		Consider the matrices $A$ and $B$ described in \cref{eq:61a}. Discovering $(AB)^{T}$:
+
+		\begin{align}
+			(AB)^{T} &= \begin{bmatrix}
+					3 & 5 \\[0.3em]
+					3 & 5
+				\end{bmatrix}^{T} = \begin{bmatrix}
+					3 & 3 \\[0.3em]
+					5 & 5
+				\end{bmatrix}&
+		\label{eq:61c}
+		\end{align}
+
+		\begin{align}
+			A^{T}B^{T} &= \begin{bmatrix}
+					1 & 1 \\[0.3em]
+					1 & 1
+				\end{bmatrix}^{T} \begin{bmatrix}
+					1 & 2 \\[0.3em]
+					2 & 3
+				\end{bmatrix}^{T} = \begin{bmatrix}
+					3 & 5 \\[0.3em]
+					3 & 5
+				\end{bmatrix} \neq (AB)^{T}&
+		\label{eq:61ctwo}
+		\end{align}
+
+		The sentence is false.

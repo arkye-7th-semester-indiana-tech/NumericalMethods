@@ -1,0 +1,62 @@
+\section{Matrix Norms}
+
+	\subsection{Question (a)}
+		\begin{align}
+			A &= \begin{bmatrix}
+					3 & -5 \\[0.3em]
+					-5 & 4
+				\end{bmatrix}& \\
+			||A||_{1} &= 5 + 4 = 9& \\
+			||A||_{\infty} &= 5 + 4 = 9&
+		\label{eq:65a}
+		\end{align}
+
+		In order to discover $||A||_{2}$:
+
+		\begin{align}
+			A^{T}A &= \begin{bmatrix}
+					34 & -35 \\[0.3em]
+					-35 & 41
+				\end{bmatrix}& \\
+				\notag \\
+			\left| \begin{bmatrix}
+					34-\lambda & -35 \\[0.3em]
+					-35 & 41-\lambda
+				\end{bmatrix} \right| &=  (34-\lambda)(41-\lambda) - 1225 = \lambda^{2} - 75\lambda + 169& \\
+				\notag \\
+				\lambda_{1} &= 72.675& \\
+				\lambda_{2} &= 2.3254& \\
+				\notag \\
+				||A||_{2} = \sqrt{\lambda_{1}} = 8.5249
+		\label{eq:65aeigen}
+		\end{align}
+
+	\subsection{Question (b)}
+		\begin{align}
+			A &= \begin{bmatrix}
+					4 & 1 \\[0.3em]
+					0 & 4
+				\end{bmatrix}& \\
+			||A||_{1} &= 1 + 4 = 5& \\
+			||A||_{\infty} &= 4 + 1 = 5&
+		\label{eq:65b}
+		\end{align}
+
+		In order to discover $||A||_{2}$:
+
+		\begin{align}
+			A^{T}A &= \begin{bmatrix}
+					16 & 8 \\[0.3em]
+					0 & 16
+				\end{bmatrix}& \\
+				\notag \\
+			\left| \begin{bmatrix}
+					16-\lambda & 8 \\[0.3em]
+					0 & 16-\lambda
+				\end{bmatrix} \right| &=  (16-\lambda)(16-\lambda) = \lambda^{2} - 32\lambda + 256& \\
+				\notag \\
+				\lambda &= 16& \\
+				\notag \\
+				||A||_{2} = \sqrt{\lambda} = 4
+		\label{eq:65beigen}
+		\end{align}

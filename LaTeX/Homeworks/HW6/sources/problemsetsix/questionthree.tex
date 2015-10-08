@@ -1,0 +1,93 @@
+\section{Linear System}
+		
+	\begin{align}
+		\begin{bmatrix}
+			1 & 0 & 0 \\[0.3em]
+			2 & 1 & 0 \\[0.3em]
+			-1 & 0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			2 & 3 & -1 \\[0.3em]
+			0 & -2 & 1 \\[0.3em]
+			0 & 0 & 3
+		\end{bmatrix}
+		\begin{bmatrix}
+			x_{1} \\[0.3em]
+			x_{2} \\[0.3em]
+			x_{3}
+		\end{bmatrix}&= \begin{bmatrix}
+			2 \\[0.3em]
+			-1 \\[0.3em]
+			1
+		\end{bmatrix}&
+	\label{eq:63}
+	\end{align}
+
+	Considering $y = Ux$ and using $Ly = b$:
+
+	\begin{align}
+		\begin{bmatrix}
+			1 & 0 & 0 \\[0.3em]
+			2 & 1 & 0 \\[0.3em]
+			-1 & 0 & 1
+		\end{bmatrix}
+		\begin{bmatrix}
+			y_{1} \\[0.3em]
+			y_{2} \\[0.3em]
+			y_{3}
+		\end{bmatrix}&= \begin{bmatrix}
+			2 \\[0.3em]
+			9 \\[0.3em]
+			-1
+		\end{bmatrix}&
+	\label{eq:63y}
+	\end{align}
+
+	\begin{align}
+		y_{1} = 2 \\
+		\notag \\
+		2y_{1} + y_{2} = 9 \notag \\
+		y_{2} = 9 - 4 = 5 \\
+		\notag \\
+		-y_{1} + y_{3} = -1 \notag \\
+		y_{3} = -1 + 2 = 1
+	\end{align}
+
+	Solving for $Ux = y$
+
+	\begin{align}
+		\begin{bmatrix}
+			2 & 3 & -1 \\[0.3em]
+			0 & -2 & 1 \\[0.3em]
+			0 & 0 & 3
+		\end{bmatrix}
+		\begin{bmatrix}
+			x_{1} \\[0.3em]
+			x_{2} \\[0.3em]
+			x_{3}
+		\end{bmatrix}&= \begin{bmatrix}
+			2 \\[0.3em]
+			5 \\[0.3em]
+			1
+		\end{bmatrix}&
+	\label{eq:63x}
+	\end{align}	
+
+	\begin{align}
+		x_{3} = 1 \\
+		\notag \\
+		-2x_{2} + x_{3} = 5 \notag \\
+		x_{2} = \frac{-5-1}{2} = -3 \\
+		\notag \\
+		2x_{1} + 3x_{2} - x_{3} = 2 \notag \\
+		x_{1} =  \frac{9 + 2 - 1}{2} = 5
+	\end{align}
+
+	\begin{align}
+		&\begin{bmatrix}
+			x_{1} = 5 \\[0.3em]
+			x_{2} = -3 \\[0.3em]
+			x_{3} = 1
+		\end{bmatrix}&
+	\label{eq:63result}
+	\end{align}
