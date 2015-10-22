@@ -1,0 +1,29 @@
+\section{Hilbert Matrix}
+
+	\begin{align}
+		H_{3} &= 
+		\begin{bmatrix}
+			1 & \frac{1}{2} & \frac{1}{3} \\
+			\frac{1}{2} & \frac{1}{3} & \frac{1}{4} \\
+			\frac{1}{3} & \frac{1}{4} & \frac{1}{5}
+		\end{bmatrix}& \\
+	\label{eq:75}
+	\end{align}
+
+	Using MATLAB to discober $H_{3}^{-1}$:
+
+	\begin{lstlisting}[language=MATLAB]
+>	H = hilb(3)
+>	inv(H)
+ans =
+	9	-36	30
+	-36	192	-180
+	30	-180	180
+	\end{lstlisting}
+
+	\begin{align}
+		K(H_{3}) &= ||H_{3}||_{1}||H_{3}^{-1}||_{1}& \\
+		||H_{3}||_{1} &= 1 + \frac{1}{2} + \frac{1}{3} = \frac{11}{6}& \\
+		||H_{3}^{-1}||_{1} &= \max \left( 75, 408, 390 \right) = 408& \\
+		K(H_{3}) &= \frac{11*408}{6} = \frac{4488}{6} = 748
+	\end{align}

@@ -1,0 +1,31 @@
+\section{Gauss-Seidel Convergence}
+
+	\begin{align}
+		x &= Tx + d& \\
+		x^{k+1} &=
+			\begin{bmatrix}
+				\frac{2}{3} & 0 \\
+				1 & -\frac{4}{5}
+			\end{bmatrix}
+			x^{k} +
+			\begin{bmatrix}
+				6 \\
+				-5
+			\end{bmatrix}&
+	\label{eq:71}
+	\end{align}
+
+	A proof that \cref{eq:71} converges for some $x^{0} \in \mathbb{R}^{2}$ is verifying if $||T|| < 1$. Considering the 1-norm of $T$:
+
+	\begin{align}
+		||T||_{1} &= \max_{j} \sum_{i=1}^{n}|a_{ij}|& \\
+		\left|\left|
+			\begin{matrix}
+				\frac{2}{3} & 0 \\
+				1 & -\frac{4}{5}
+			\end{matrix}
+		\right|\right|_{1}
+		&= \max \left(\frac{2}{3}+1,0+\frac{4}{5}\right) = \frac{5}{3} > 1&
+	\end{align}
+
+	Since $||T|| > 1$, the sequence may or may not converge.

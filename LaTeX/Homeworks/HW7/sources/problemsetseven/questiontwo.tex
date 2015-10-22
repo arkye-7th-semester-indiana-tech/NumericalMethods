@@ -1,0 +1,266 @@
+\section{Jacobi Method}
+	
+	\begin{align}
+		\begin{matrix}
+			4x_{1} & - 2x_{2} & + x_{3} &= 0 \\
+			-x_{1} & + 3x_{2} & + x_{3} &= 0 \\
+			x_{1} & + x_{2} & + 5x_{3} &= -1
+		\end{matrix}
+	\label{eq:72}
+	\end{align}
+
+	\subsection{Question (a)}
+
+		Writing \cref{eq:72} as $x^{k+1} = Tx^{k} + C$:
+
+		\begin{align}
+			\begin{bmatrix}
+				x_{1} \\
+				x_{2} \\
+				x_{3}
+			\end{bmatrix}
+			\begin{bmatrix}
+				4 & -2 & 1 \\
+				-1 & 3 & 1 \\
+				1 & 1 & 5
+			\end{bmatrix}
+			&=
+			\begin{bmatrix}
+				0 \\
+				1 \\
+				-1
+			\end{bmatrix}& \notag \\
+			\begin{bmatrix}
+				x_{1}^{(k+1)} \\
+				x_{2}^{(k+1)} \\
+				x_{3}^{(k+1)}
+			\end{bmatrix}
+			&=
+			-
+			\begin{bmatrix}
+				0 & -\frac{1}{2} & \frac{1}{4} \\
+				-\frac{1}{3} & 0 & \frac{1}{3} \\
+				\frac{1}{5} & \frac{1}{5} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_{1}^{(k)} \\
+				x_{2}^{(k)} \\
+				x_{3}^{(k)}
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				\frac{-1}{5}
+			\end{bmatrix}& \notag \\
+			&=
+			\begin{bmatrix}
+				0 & \frac{1}{2} & -\frac{1}{4} \\
+				\frac{1}{3} & 0 & -\frac{1}{3} \\
+				-\frac{1}{5} & -\frac{1}{5} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_{1}^{(k)} \\
+				x_{2}^{(k)} \\
+				x_{3}^{(k)}
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				\frac{-1}{5}
+			\end{bmatrix}&
+		\end{align}
+
+		Verifying if $||T||_{\infty} < 1$:
+
+		\begin{align}
+			||T||_{\infty} &= \max_{i} \sum_{j=1}^{n}|a_{ij}|& \\
+		\left|\left|
+			\begin{matrix}
+				0 & \frac{1}{2} & -\frac{1}{4} \\
+				\frac{1}{3} & 0 & -\frac{1}{3} \\
+				-\frac{1}{5} & -\frac{1}{5} & 0
+			\end{matrix}
+		\right|\right|_{\infty}
+		&= \max \left(\frac{1}{2}+\frac{1}{4},\frac{1}{3}+\frac{1}{3}, \frac{1}{5}+\frac{1}{5}\right) = \frac{3}{4} < 1&
+		\end{align}
+
+		Jacobi method will converge for \cref{eq:72}.
+
+	\subsection{Question (b)}
+
+		\begin{align}
+			\begin{bmatrix}
+				x_{1}^{(1)} \\
+				x_{2}^{(1)} \\
+				x_{3}^{(1)}
+			\end{bmatrix}
+			&=
+			\begin{bmatrix}
+				0 & \frac{1}{2} & -\frac{1}{4} \\
+				\frac{1}{3} & 0 & -\frac{1}{3} \\
+				-\frac{1}{5} & -\frac{1}{5} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 \\
+				1 \\
+				1
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				-\frac{1}{5}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				\frac{1}{4} \\
+				\frac{1}{3} \\
+				-\frac{3}{5}
+			\end{bmatrix}
+			& \\
+			\begin{bmatrix}
+				x_{1}^{(2)} \\
+				x_{2}^{(2)} \\
+				x_{3}^{(2)}
+			\end{bmatrix}
+			&=
+			\begin{bmatrix}
+				0 & \frac{1}{2} & -\frac{1}{4} \\
+				\frac{1}{3} & 0 & -\frac{1}{3} \\
+				-\frac{1}{5} & -\frac{1}{5} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\frac{1}{4} \\
+				\frac{1}{3} \\
+				-\frac{3}{5}
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				-\frac{1}{5}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				\frac{1}{6} + \frac{3}{20} \\
+				\frac{1}{12} + \frac{1}{5} \\
+				-\frac{1}{20} - \frac{1}{15} \\
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				-\frac{1}{5}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\frac{19}{60} \\
+				\frac{37}{60} \\
+				-\frac{19}{60} \\
+			\end{bmatrix}
+			& \\
+			\begin{bmatrix}
+				x_{1}^{(3)} \\
+				x_{2}^{(3)} \\
+				x_{3}^{(3)}
+			\end{bmatrix}
+			&=
+			\begin{bmatrix}
+				0 & \frac{1}{2} & -\frac{1}{4} \\
+				\frac{1}{3} & 0 & -\frac{1}{3} \\
+				-\frac{1}{5} & -\frac{1}{5} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\frac{19}{60} \\
+				\frac{37}{60} \\
+				-\frac{19}{60} \\
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				-\frac{1}{5}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				\frac{37}{120} + \frac{19}{240} \\
+				\frac{19}{180} + \frac{19}{180} \\
+				-\frac{19}{300} - \frac{37}{300} \\
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 \\
+				\frac{1}{3} \\
+				-\frac{1}{5}
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\frac{31}{80} \\
+				\frac{49}{90} \\
+				-\frac{29}{75} \\
+			\end{bmatrix}&
+		\end{align}
+
+	\subsection{Question (c)}
+
+		Using MATLAB to discover the value of $x$:
+
+		\begin{lstlisting}[language=MATLAB]
+>	A = [4 -2 1 ; -1 3 1 ; 1 1 5]
+>	B = [ 0 ; 1 ; -1]
+> linsolve(A,B)
+ans =
+	0.4
+	0.6
+	-0.4
+		\end{lstlisting}
+
+		Using $x$ to discover the error bound:
+
+		\begin{align}
+			||x-x^{(k)}|| &\leq ||T||^{k}||x^{(0)}-x||
+			& \\
+			\left|\left|
+			\begin{matrix}
+				\frac{2}{5} - \frac{31}{80} \\
+				\frac{3}{5} - \frac{49}{90} \\
+				-\frac{2}{5} + \frac{29}{75}
+			\end{matrix}
+			\right|\right|_{\infty}
+			&\leq \left(\frac{3}{4}\right)^{3}
+			\left|\left|
+			\begin{matrix}
+				1 - \frac{2}{5} \\
+				1 - \frac{3}{5} \\
+				1 + \frac{2}{5}
+			\end{matrix}
+			\right|\right|_{\infty}
+			& \notag \\
+			\left|\left|
+			\begin{matrix}
+				\frac{1}{80} \\
+				\frac{1}{18} \\
+				-\frac{1}{75}
+			\end{matrix}
+			\right|\right|_{\infty}
+			&\leq \frac{27}{64}
+			\left|\left|
+			\begin{matrix}
+				\frac{3}{5} \\
+				\frac{2}{5} \\
+				\frac{7}{5}
+			\end{matrix}
+			\right|\right|_{\infty}
+			& \notag \\
+			\frac{1}{18} & \leq \frac{27}{64}*\frac{7}{5}
+			& \notag \\
+			\frac{1}{18} & \leq \frac{189}{320}
+		\end{align}
+
+	\subsection{Question (d)}
+		\begin{align}
+			10^{-8} &\leq \left(\frac{3}{5}\right)^{k}*\frac{7}{5}
+			& \notag \\
+			\lceil k \rceil &=  \frac{\log\left({\frac{5*10^{-8}}{7}}\right)}{\log\left({\frac{3}{5}}\right)}& \notag \\
+			&= \frac{-8\log(2) -7\log(5) - \log(7)}{\log(3) - \log(5)} = 36.719& \notag \\
+			k &= 37&	
+		\end{align}

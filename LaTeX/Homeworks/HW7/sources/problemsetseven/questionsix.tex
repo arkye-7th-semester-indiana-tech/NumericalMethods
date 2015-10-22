@@ -1,0 +1,53 @@
+\section{Condition Number}
+	
+	\begin{align}
+		\begin{bmatrix}
+			1 & 1 \\
+			1 & 1+\frac{1}{n}
+		\end{bmatrix}^{1}
+		&=
+		\frac{1}{\frac{1}{n}}
+		\begin{bmatrix}
+			1+\frac{1}{n} & -1 \\
+			-1 & 1
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			n + 1 & -n \\
+			-n & n
+		\end{bmatrix}
+		& \\
+		\left|\left|
+		\begin{matrix}
+			1 & 1 \\
+			1 & 1+\frac{1}{n} \\
+		\end{matrix}
+		\right|\right|_{\infty}
+		&=
+		\max \left( 2, 2 + \frac{1}{|n|} \right)
+		= 2 + \frac{1}{|n|}
+		& \\
+		\left|\left|
+		\begin{matrix}
+			n + 1 & -n \\
+			-n & n
+		\end{matrix}
+		\right|\right|_{\infty}
+		&=
+		\max \left( 2|n| + 1, 2|n| \right)
+		= 2|n| + 1
+		& \\
+		cond\left(
+		\begin{matrix}
+			1 & 1 \\
+			1 & 1+\frac{1}{n}
+		\end{matrix}\right)
+		&=
+		\left( 2 + \frac{1}{|n|} \right)
+		(2|n| + 1)
+		=
+		4|n| + \frac{1}{|n|} + 4 
+		& \\
+		\lim_{n \to \infty} 4|n| + \frac{1}{|n|} + 4
+		&= \infty&
+	\end{align}

@@ -1,0 +1,16 @@
+\section{Gauss-Seidel Number of Iterations}
+
+	\begin{align}
+		||x-x^{(k)}|| &\leq \frac{||T||^{k}}{1-||T||}||x^{(1)}-x^{(0)}||& \\
+		||T||_{\infty} &= \max \left( \frac{1}{2}, \frac{2}{3}, \frac{3}{5} \right) = \frac{2}{3}& \\
+		x^{(1)} &=
+		\begin{bmatrix}
+			\frac{1}{2} & 1 & -\frac{1}{3}
+		\end{bmatrix}^{T}& \\
+		||x^{(1)}-x^{(0)}||_{\infty} &= \max \left(\frac{1}{2}, 1, \frac{1}{3}\right) = 1& \\
+		10^{-8} &\leq \frac{\left( \frac{2}{3} \right)^{k}}{1-\frac{2}{3}} 
+		& \notag \\
+		\lceil k \rceil &=  \frac{\log\left(\frac{10^{-8}}{3}\right)}{\log\left({\frac{2}{3}}\right)}& \notag \\
+		&= \frac{-8\log(10) - \log(3)}{\log(2) - \log(3)} = 48.719& \notag \\
+		k &= 49&	
+	\end{align}
