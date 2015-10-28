@@ -1,0 +1,43 @@
+\section{October 27}
+
+	$A\vec{x} = b$, if $A$ is SDD, converges.
+
+	$\vec{x}^{(k+1)} = T\vec{x}^{(k)} + \vec{c}$, if $||T|| < 1$, converges.
+
+	$||\vec{x} - \vec{x}^{(k)}|| \leq
+	\frac{||T||^{k}}{1-||T||}||\vec{x}^{(0)}-x^{(1)}|| \leq T_{ol}$.
+
+	\begin{align}
+		f'(x_{0}) &= \lim{h \to 0} \frac{f(x_{0}+h)-f(x_{0})}{h}& \\
+		&\approx \frac{f(x_{0} + h) - f(x_{0})}{h}&
+	\end{align}
+
+	\subsection{Basic Extrapolation Technique (Based on the order of term)}
+		Suppose approximations based on different h's are known. We may extrapolate a more accurate approximation as follows: \\
+		Exact $=$ Approx. $+$ Error \\
+		If the error is of order $O(h^{n})$, \\
+		Error $\propto h^{n}$ \\
+		Error $= kh^{n}$ \\
+		Exact $=$ Approx. $+ kh^{n}$ \\
+		Using this equation with a pair of values for Approx and h, we may obtain a better approximation by solving for Exact.
+
+		Example:
+		\begin{align}
+				f(x) = ln(x+2) \\
+				h = 0.1, f'(0) \approx 0.5004172928 (A_{0.1}) \\
+				h = 0.01, f'(0) \approx 0.5000041667 (A_{0.01})
+		\end{align}
+
+		Exact $= A_{0.1} + k*(0.1)^{2}$ \\
+		Exact $= A_{0.1} + k*(0.01)$
+
+		\begin{align}
+			\frac{E - A_{0.1}}{0.01} = k \\
+			E = A_{0.01} + \frac{E - A_{0.1}}{0.01}*0.0001 \\
+			E = A_{0.01} + 0.01E - 0.01A_{0.1} \\
+			0.99E = A_{0.01} - 0.01A_{0.1} \\
+			E = \frac{A_{0.01} - 0.01A_{0.1}}{0.99} = 0.4999999937
+		\end{align}
+
+	\subsection{Numerical Integration}
+		Our goal is to approximate $\int_{a}^{b} f(x) dx$, where $f(x)$ is continuous on $a \leq x \leq b$. Using Rhemann sums $\int_{a}^{b} f(x) dx \approx \sum_{k=1}^{n} f(x_{k}^{*} \Delta X)$. $x_{k}^{*}$ means the chosen one from the $k^{th}$.

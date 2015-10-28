@@ -1,0 +1,137 @@
+\section{LU Factorizations}
+
+	Purpose:
+	\begin{align}
+		A &= LU& \\
+		A\vec{x} &= (LU)\vec{x} = L(U\vec{x}) = b& U\vec{x} &= \vec{y}& \notag \\
+		L\vec{y} &= b&
+	\end{align}
+
+	\noindent Procedure ($3 \times 3$ matrix):
+	\begin{align}
+		\begin{bmatrix}
+			a_{11} & a_{12} & a_{13} \\
+			a_{21} & a_{22} & a_{23} \\
+			a_{31} & a_{32} & a_{33}
+		\end{bmatrix} &=
+		\begin{bmatrix}
+			l_{11} & 0 & 0 \\
+			l_{21} & l_{22} & 0 \\
+			l_{31} & l_{32} & l_{33}
+		\end{bmatrix}
+		\begin{bmatrix}
+			u_{11} & u_{12} & u_{13} \\
+			0 & u_{22} & u_{23} \\
+			0 & 0 & u_{33}
+		\end{bmatrix}
+		& \\ &=
+		\begin{bmatrix}
+			l_{11} u_{11} & l_{11} u_{12} & l_{11} u_{13} \\
+			l_{21} u_{11} & l_{21} u_{12} + l_{22} u_{22}
+				& l_{21} u_{13} + l_{22} u_{23} \\
+			l_{31} u_{11} & l_{31} u_{12} + l_{32} u_{22}
+				& l_{31} u_{13} + l_{32} u_{23} + l_{33} u_{33}
+		\end{bmatrix}
+	\end{align}
+
+	\noindent Types of equations:
+	\begin{align}
+		&i < j& &l_{i1} + u_{1j} + l_{i2} u_{2j} + \dots + l_{ii} u_{ij} = a_{ij}& \\
+		&i = j& &l_{i1} + u_{1j} + l_{i2} u_{2j} + \dots + l_{ii} u_{jj} = a_{ij}& \\
+		&i > j& &l_{i1} + u_{1j} + l_{i2} u_{2j} + \dots + l_{ij} u_{jj} = a_{ij}&
+	\end{align}
+
+	\subsection{Doolittle}
+
+		$A = 3 \times 3$ matrix:
+		\begin{align}
+			\begin{bmatrix}
+				a_{11} & a_{12} & a_{13} \\
+				a_{21} & a_{22} & a_{23} \\
+				a_{31} & a_{32} & a_{33}
+			\end{bmatrix} &=
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				l_{21} & 1 & 0 \\
+				l_{31} & l_{32} & 1
+			\end{bmatrix}
+			\begin{bmatrix}
+				u_{11} & u_{12} & u_{13} \\
+				0 & u_{22} & u_{23} \\
+				0 & 0 & u_{33}
+			\end{bmatrix}
+			& \\ &=
+			\begin{bmatrix}
+				(1)u_{11} & (1)u_{12} & (1)u_{13} \\
+				l_{21} u_{11} & l_{21} u_{12} + (1)u_{22}
+					& l_{21} u_{13} + (1)u_{23} \\
+				l_{31} u_{11} & l_{31} u_{12} + l_{32} u_{22}
+					& l_{31} u_{13} + l_{32} u_{23} + (1)u_{33}
+			\end{bmatrix}&
+		\end{align}
+
+	\subsection{Crout}
+
+		$A = 3 \times 3$ matrix:
+		\begin{align}
+			\begin{bmatrix}
+				a_{11} & a_{12} & a_{13} \\
+				a_{21} & a_{22} & a_{23} \\
+				a_{31} & a_{32} & a_{33}
+			\end{bmatrix} &=
+			\begin{bmatrix}
+				l_{11} & 0 & 0 \\
+				l_{21} & l_{22} & 0 \\
+				l_{31} & l_{32} & l_{33}
+			\end{bmatrix}
+			\begin{bmatrix}
+				1 & u_{12} & u_{13} \\
+				0 & 1 & u_{23} \\
+				0 & 0 & 1
+			\end{bmatrix}
+			& \\ &=
+			\begin{bmatrix}
+				l_{11}(1) & l_{11} u_{12} & l_{11} u_{13} \\
+				l_{21}(1) & l_{21} u_{12} + l_{22}(1)
+					& l_{21} u_{13} + l_{22} u_{23} \\
+				l_{31}(1) & l_{31} u_{12} + l_{32}(1)
+					& l_{31} u_{13} + l_{32} u_{23} + l_{33}(1)
+			\end{bmatrix}&
+		\end{align}
+
+	\subsection{Cholesky}
+
+		$A = 3 \times 3$ matrix:
+		\begin{align}
+			\begin{bmatrix}
+				a_{11} & a_{12} & a_{13} \\
+				a_{21} & a_{22} & a_{23} \\
+				a_{31} & a_{32} & a_{33}
+			\end{bmatrix} &=
+			\begin{bmatrix}
+				x_{11} & 0 & 0 \\
+				l_{21} & x_{22} & 0 \\
+				l_{31} & l_{32} & x_{33}
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_{11} & u_{12} & u_{13} \\
+				0 & x_{22} & u_{23} \\
+				0 & 0 & x_{33}
+			\end{bmatrix}
+			& \\ &=
+			\begin{bmatrix}
+				x_{11} x_{11} & x_{11} u_{12} & x_{11} u_{13} \\
+				l_{21} x_{11} & l_{21} u_{12} + x_{22} x_{22}
+					& l_{21} u_{13} + x_{22} u_{23} \\
+				l_{31} x_{11} & l_{31} u_{12} + l_{32} x_{22}
+					& l_{31} u_{13} + l_{32} u_{23} + x_{33} x_{33}
+			\end{bmatrix}
+			& \notag \\ &=
+			\begin{bmatrix}
+				x_{11}^{2} & x_{11} u_{12} & x_{11} u_{13} \\
+				l_{21} x_{11} & l_{21} u_{12} + x_{22}^{2}
+					& l_{21} u_{13} + x_{22} u_{23} \\
+				l_{31} x_{11} & l_{31} u_{12} + l_{32} x_{22}
+					& l_{31} u_{13} + l_{32} u_{23} + x_{33}^{2}
+			\end{bmatrix}&
+		\end{align}
