@@ -1,0 +1,37 @@
+\section{Inverse of a Matrix}
+	\begin{align}
+		AA^{-1} &= I&
+	\end{align}
+
+	\subsection{Using Determinant}
+		\begin{align}
+			A^{-1} &= \frac{A^{T}}{\det{(A)}}&
+		\end{align}
+
+		For $A = 2 \times 2$:
+
+		\begin{align}
+			\begin{bmatrix}
+				a & b \\
+				c & d
+			\end{bmatrix}^{-1} &= \frac{1}{ad - bc}
+			\begin{bmatrix}
+				a & c \\
+				b & d
+			\end{bmatrix}&
+		\end{align}
+
+		For $A = 3 \times 3$:
+
+		\begin{align}
+			\begin{bmatrix}
+				a & b & c \\
+				d & e & f \\
+				g & h & i
+			\end{bmatrix}^{-1} &= \frac{1}{(aei + bfg + cdh) - (ceg + bdi + afh)}
+			\begin{bmatrix}
+				a & d & g \\
+				b & e & h \\
+				c & f & i
+			\end{bmatrix}&
+		\end{align}

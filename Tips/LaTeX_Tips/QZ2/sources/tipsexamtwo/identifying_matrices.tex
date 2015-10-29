@@ -14,5 +14,16 @@
 			\vec{x_{ij}} \in \mathbb{R}_{\neq 0}
 		\end{align}
 
+		Or if:
+		\begin{enumerate}
+			\item{All the eigenvalues of $A$ are positive;}
+			\item{And only if, the determinant of each leading submatrix is positive.}
+		\end{enumerate}
+
 	\subsection{Coefficient Matrix (A) Significance}
-		%TODO: Practical \& Theoretical Significance
+		If $A$ is either SDD or SPD:
+			\begin{itemize}
+				\item{$A$ is invertible, and $A\vec{x} = b$ has a unique solution;}
+				\item{Both Gaussian elimination and LU factorization may be performed with any pivoting technique;}
+				\item{Both Gaussian elimination and LU factorization are stable with regard to round-off error.}
+			\end{itemize}

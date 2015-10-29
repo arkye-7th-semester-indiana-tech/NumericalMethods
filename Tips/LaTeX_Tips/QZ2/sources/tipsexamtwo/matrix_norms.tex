@@ -1,10 +1,57 @@
 \section{Matrix Norms}
 
 	\subsection{$1$- Norm}
-		%TODO
+
+		The maximum absolute column sum norm:
+		\begin{align}
+			||A||_{1} &= \max_{j} \sum_{i=1}^{n}\left|a_{ij}\right|&
+		\end{align}
 
 	\subsection{$2$- Norm}
-		%TODO
+		The spectral norm (or simply: matrix norm) is determined as follow:
+		\begin{align}
+			||A||_{2} &= p\left(A^{T}A\right)&
+		\end{align}
+		Which $p$ is the maximum eigenvalue (in absolute mode). For $A = 2 \times 2$ matrix:
+		\begin{align}
+			||A||_{2} &= p\left(
+				\begin{bmatrix}
+					a & b \\
+					c & d
+				\end{bmatrix}^{T}
+				\begin{bmatrix}
+					a & b \\
+					c & d
+				\end{bmatrix}\right)&
+			\\ &=
+			p\left(
+				\begin{bmatrix}
+					a & c \\
+					b & d
+				\end{bmatrix}
+				\begin{bmatrix}
+					a & b \\
+					c & d
+				\end{bmatrix}\right)&
+			\\ &=
+			p\left(
+				\begin{bmatrix}
+					a^{2} + c^{2} & ab + cd \\
+					ca + dc & cb + d^{2}
+				\end{bmatrix}\right)&
+			\\ &=
+			\sqrt{\max \det \left(
+				\begin{bmatrix}
+					a^{2} + c^{2} - \lambda & ab + cd \\
+					ba + dc & b^{2} + d^{2} - \lambda
+				\end{bmatrix}\right)}&
+			\\ &=
+			\sqrt{\max \left(|(a^{2} + c^{2} - \lambda)(b^{2} + d^{2} - \lambda) - (ab + cd)^{2}|\right)}&
+		\end{align}
 
 	\subsection{$\infty$- Norm}
-		%TODO:
+
+		The maximum absolute row sum norm:
+		\begin{align}
+			||A||_{\infty} &= \max_{i} \sum_{j=1}^{n}\left|a_{ij}\right|&
+		\end{align}
