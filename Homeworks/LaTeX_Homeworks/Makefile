@@ -1,10 +1,10 @@
 ## Arkye's LaTeX Structure Makefile ##
 
 # Output Name
-TARGET = JonathanMoraes_NMethods_HW7
+TARGET = JonathanMoraes_NMethods_HW8
 
 # LaTeX Project Settings
-MAIN_DIR = HW7
+MAIN_DIR = HW8
 MAIN_NAME = main
 MAIN_FILE = main.tex
 
@@ -31,7 +31,7 @@ PDF_FILE = $(OUTPUT_DIR)$(TARGET).pdf
 
 .PHONY: all
 
-all: 
+all:
 	make -s $(TARGET).pdf
 
 $(TARGET).pdf: $(ALL_FILES)
