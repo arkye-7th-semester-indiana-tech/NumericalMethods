@@ -1,2 +1,13 @@
 \section{Extrapolation Technique in $O(h^{2})$}
-	% TODO
+	\begin{align}
+		\text{Exact} &= \text{Approximation} + kh^{n}& \\
+		A_{0.05} &= 4.15831& \\
+		A_{0.025} &= 4.16361& \\
+		\text{Exact} &= A_{0.05} + k(0.05)^{2}& \notag \\
+		k &= \frac{Exact - A_{0.05}}{0.0025}& \\
+		\text{Exact} &= A_{0.025} + k(0.025)^{2}& \notag \\
+		&= A_{0.025} + \left(\frac{Exact - A_{0.05}}{0.0025}\right)(0.025)^{2}& \notag \\
+		\text{Exact} - 0.25(\text{Exact}) &= A_{0.025} - (0.25)A_{0.05}& \notag \\
+		\text{Exact} &= \frac{A_{0.025} - (0.25)A_{0.05}}{0.75}& \notag \\
+		&= \frac{4.16361-1.03958}{0.75} = 4.16538&
+	\end{align}

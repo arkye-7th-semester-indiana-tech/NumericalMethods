@@ -1,2 +1,13 @@
 \section{Extrapolation Technique in $O(h^{4})$}
-	% TODO
+	\begin{align}
+		\text{Exact} &= \text{Approximation} + kh^{n}& \\
+		A_{0.01} &= -3.2213& \\
+		A_{0.005} &= -3.3245& \\
+		\text{Exact} &= A_{0.01} + k(0.01)^{4}& \notag \\
+		k &= \frac{Exact - A_{0.01}}{(0.01)^{4}}& \\
+		\text{Exact} &= A_{0.005} + k(0.005)^{4}& \notag \\
+		&= A_{0.005} + \left(\frac{Exact - A_{0.01}}{(0.01)^{4}}\right)(0.005)^{4}& \notag \\
+		\text{Exact} - 0.0625(\text{Exact}) &= A_{0.005} - (0.0625)A_{0.01}& \notag \\
+		\text{Exact} &= \frac{A_{0.005} - (0.0625)A_{0.01}}{0.9375}& \notag \\
+		&= \frac{-3.3245-(-2.0133)}{0.9375} = -3.3314&
+	\end{align}

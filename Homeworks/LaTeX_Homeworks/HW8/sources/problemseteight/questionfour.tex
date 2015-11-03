@@ -1,2 +1,32 @@
 \section{$O(h^{4})$ Methods}
-	% TODO
+
+	Since $f'(x) = v$ (velocity), $f''(x) = a$ (acceleration). The appropriate $O(h^{4})$ method is the 5-point central difference:
+	\begin{align}
+		f'(x_{0}) &\approx \frac{f(x_{0}-2h)-8f(x_{0}-h)+8f(x_{0}+h)-f(x_{0}+2h)}{12h}& \\
+		f''(x_{0}) &\approx \frac{-f(x_{0}-2h)+16f(x_{0}-h)-30f(x_{0})+16f(x_{0}+h)-f(x_{0}+2h)}{12h^{2}}& \\
+		h &= 0.52&
+	\end{align}
+
+	Using $x_{0} = 1.04$ to discover the velocity:
+
+	\begin{align}
+		f'(1.04) &\approx \frac{f(0)-8f(0.52)+8f(1.56)-f(2.08)}{6.24}& \\
+		f'(1.04) &\approx \frac{153-8(185)+8(249)-261}{6.24}& \notag \\
+		&\approx \frac{153-1480+1992-261}{6.24} = \frac{404}{6.24} = 64.744&
+	\end{align}
+
+	Using $x_{0} = 1.04$ to discover the acceleration:
+
+	\begin{align}
+		f''(1.04) &\approx \frac{-f(0)+16f(0.52)-30f(1.04)+16f(1.56)-f(2.08)}{3.2448}& \\
+		f''(1.04) &\approx \frac{-153+16(185)-30(208)+16(249)-261}{3.2448}& \notag \\
+		f''(1.04) &\approx \frac{-153+2960-6240+3984-261}{3.2448} = \frac{280}{3.2448} = 89.374&
+	\end{align}
+
+	Using $x_{0} = 1.56$ to discover the acceleration:
+
+	\begin{align}
+		f''(1.56) &\approx \frac{-f(0.52)+16f(1.04)-30f(1.56)+16f(2.08)-f(2.60)}{3.2448}& \\
+		f''(1.56) &\approx \frac{-185+16(208)-30(249)+16(261)-271}{3.2448}& \notag \\
+		f''(1.56) &\approx \frac{-185+3328-7470+4176-271}{3.2448} = \frac{280}{3.2448} = -130.05&
+	\end{align}

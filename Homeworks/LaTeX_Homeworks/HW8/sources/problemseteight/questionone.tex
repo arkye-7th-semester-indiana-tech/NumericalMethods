@@ -1,2 +1,39 @@
 \section{Two-Point Backward Difference Approximation}
-	% TODO
+	\begin{align}
+		f'(x_{0})&\approx \frac{f(x_{0})-f(x_{0}-h)}{h}& \\
+		f(x) &= e^{-x}ln(x+2)& \\
+		f'(x) &= -e^{-x}ln(x+2) + \frac{e^{-x}}{x+2}& \\
+		x &= x_{0} = 2& \\
+		f(2) &= e^{-2}ln(4) = 0.18761& \\
+		f'(2) &= -e^{-2}ln(4) + \frac{e^{-2}}{4} = -0.18761 + 0.03383 = -0.15378&
+	\end{align}
+
+	Using $h = 0.1$:
+
+	\begin{align}
+		f'(2)&\approx \frac{f(2)-f(1.9)}{0.1}& \\
+		f(1.9) &= e^{-1.9}ln(3.9) = 0.20356 \\
+		f'(2)&\approx \frac{f(2)-f(1.9)}{0.1}& \notag \\
+		&\approx \frac{0.18761-0.20356}{0.1} = -0.15945& \\
+		E_{h=0.1} &= |-0.15945 - (-0.15378)| = 0.00567&
+	\end{align}
+
+	Using $h = 0.05$
+
+	\begin{align}
+		f'(2)&\approx \frac{f(2)-f(1.95)}{0.05}& \\
+		f(1.95) &= e^{-1.95}ln(3.95) = 0.19544 \\
+		f'(2)&\approx \frac{f(2)-f(1.95)}{0.05}& \notag \\
+		&\approx \frac{0.18761-0.19544}{0.05} = -0.15659& \\
+		E_{h=0.05} &= |-0.15659 - (-0.15378)| = 0.00281&
+	\end{align}
+
+	Using $h = 0.025$
+
+	\begin{align}
+		f'(2)&\approx \frac{f(2)-f(1.975)}{0.025}& \\
+		f(1.975) &= e^{-1.975}ln(3.975) = 0.19149 \\
+		f'(2)&\approx \frac{f(2)-f(1.975)}{0.025}& \notag \\
+		&\approx \frac{0.18761-0.19149}{0.025} = -0.15518& \\
+		E_{h=0.025} &= |-0.15518 - (-0.15378)| = 0.00140&
+	\end{align}

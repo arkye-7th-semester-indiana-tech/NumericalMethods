@@ -1,2 +1,33 @@
 \section{Estimation Using 2-Point Backward Approximation}
-	% TODO
+	\begin{align}
+		f'(x_{0})&\approx \frac{f(x_{0})-f(x_{0}-h)}{h}& \\
+		f(x) &= f(T) = a& \\
+		h &= 10&
+	\end{align}
+
+	Using $x_{0} = 20$:
+
+	\begin{align}
+		f'(20)&\approx \frac{f(20)-f(10)}{10}& \\
+		f(20) &= 1482& \\
+		f(10) &= 1447& \\
+		f'(20)&\approx \frac{1482-1447}{10} = 3.5&
+	\end{align}
+
+	Using $x_{0} = 40$:
+
+	\begin{align}
+		f'(40)&\approx \frac{f(40)-f(30)}{10}& \\
+		f(40) &= 1529& \\
+		f(30) &= 1509& \\
+		f'(40)&\approx \frac{1529-1509}{10} = 2&
+	\end{align}
+
+	Using $x_{0} = 60$:
+
+	\begin{align}
+		f'(60)&\approx \frac{f(60)-f(50)}{10}& \\
+		f(60) &= 1511& \\
+		f(50) &= 1542& \\
+		f'(60)&\approx \frac{1511-1542}{10} = -3.1&
+	\end{align}
