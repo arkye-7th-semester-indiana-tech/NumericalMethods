@@ -1,5 +1,213 @@
-\section{$\int_{1}^{2}\ln{(x+1)}$}
+\section{$\int_{1}^{2}\ln{(x+1)} \ dx$}
 	\subsection{Question (a)}
+		\begin{align}
+			\int d(uv) &= uv = \int u \ dv + \int v \ du& \\
+			\int u \ dv &= uv - \int v \ du& \\
+			u &= \ln(x+1)& \\
+			du &= \frac{1}{x+1} dx = 1 + \frac{1}{x} dx& \\
+			dx &= (x+1) \ du& \\
+			dv &= dx& \\
+			v &= x& \\
+			\int \ln{(x+1)} \ dx &= x\ln(x+1) - \int \frac{x}{x+1} \ dx& \notag \\
+			&= x\ln(x+1) - \int 1 - \frac{1}{x+1} \ dx& \notag \\
+			&= x\ln(x+1) - x + \ln(x+1) + C& \\
+			\int_{1}^{2}\ln{(x+1)} \ dx &= \left[ x\ln(x+1) - x + \ln(x+1) \right]_{1}^{2} \notag \\
+			&= (2\ln(3) - 2 + \ln(3)) - (\ln(2) - 1 + \ln(2)) \label{eq:q1_int}
+		\end{align}
+
+		Solving \cref{eq:q1_int} using GNU Octave to gain precision:
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx &= 0.909542504884439& \label{eq:q1_exact}
+		\end{align}
+
 	\subsection{Question (b)}
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx	 &\approx \frac{h}{2}\left[f(x_{0})+2\left(\sum_{i=1}^{n-1}f(x_i)\right)+f(x_{n})\right]& \\
+			h &= \frac{b-a}{n} = \frac{1}{6}& \\
+			\int_{1}^{2}\ln{(x+1)} \ dx	 &\approx  \frac{1}{12}\left[
+				f(1)+
+				2f\left(1+\frac{1}{6}\right)+
+				2f\left(1+\frac{2}{6}\right)+
+				\right.& \notag \\ &\left. \quad \quad
+				2f\left(1+\frac{3}{6}\right)+
+				2f\left(1+\frac{4}{6}\right)+
+				2f\left(1+\frac{5}{6}\right)+
+				f(2)
+			\right]& \notag \\
+			&\approx \frac{1}{12}\left[
+				f(1)+
+				2f\left(\frac{7}{6}\right)+
+				2f\left(\frac{4}{3}\right)+
+				2f\left(\frac{3}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				2f\left(\frac{5}{3}\right)+
+				2f\left(\frac{11}{6}\right)+
+				f(2)
+			\right]& \\
+			&\approx \frac{1}{12}\left[
+				\ln(1+1)+
+				2\ln\left(1+\frac{7}{6}\right)+
+				2\ln\left(1+\frac{4}{3}\right)+
+				\right.& \notag \\ &\left.
+				2\ln\left(1+\frac{3}{2}\right)+
+				2\ln\left(1+\frac{5}{3}\right)+
+				2\ln\left(1+\frac{11}{6}\right)+
+				\ln(1+2)
+			\right]& \notag \\
+			&\approx \frac{1}{12}\left[
+				\ln(2)+
+				2\ln\left(\frac{13}{6}\right)+
+				2\ln\left(\frac{7}{3}\right)+
+				2\ln\left(\frac{5}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				2\ln\left(\frac{8}{3}\right)+
+				2\ln\left(\frac{17}{6}\right)+
+				\ln(3)
+			\right]& \label{eq:q1b_composite_trap}
+		\end{align}
+
+		Solving \cref{eq:q1b_composite_trap} using GNU Octave to gain precision:
+
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx &\approx 0.909156890491459& \label{eq:q1b_approx}
+		\end{align}
+
+		Using \cref{eq:q1_exact} to discover the absolute error of \cref{eq:q1b_approx}:
+
+		\begin{align}
+			\text{Error}_{abs} &= |\text{Exact} - \text{Approximation}|& \\
+			\text{Error}_{abs} &= |0.909542504884439 - 0.909156890491459|& \notag \\
+			&= 0.000385614392980&
+		\end{align}
+
 	\subsection{Question (c)}
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx &\approx  \frac{h}{3}\left[
+			f(x_{0})+
+			4 \sum_{i=1}^{n/2} f(x_{2i-1}) +
+			2 \sum_{i=1}^{(n/2)-1} f(x_{2i}) +
+			f(x_{n})
+			\right]& \\
+			h &= \frac{b-a}{n} = \frac{1}{6}& \\
+			\int_{1}^{2}\ln{(x+1)} \ dx	 &\approx  \frac{1}{18}\left[
+				f(1)+
+				4f\left(1+\frac{1}{6}\right)+
+				2f\left(1+\frac{2}{6}\right)+
+				\right.& \notag \\ &\left. \quad \quad
+				4f\left(1+\frac{3}{6}\right)+
+				2f\left(1+\frac{4}{6}\right)+
+				4f\left(1+\frac{5}{6}\right)+
+				f(2)
+			\right]& \notag \\
+			&\approx \frac{1}{18}\left[
+				f(1)+
+				4f\left(\frac{7}{6}\right)+
+				2f\left(\frac{4}{3}\right)+
+				4f\left(\frac{3}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				2f\left(\frac{5}{3}\right)+
+				4f\left(\frac{11}{6}\right)+
+				f(2)
+			\right]& \\
+			&\approx \frac{1}{18}\left[
+				\ln(1+1)+
+				4\ln\left(1+\frac{7}{6}\right)+
+				2\ln\left(1+\frac{4}{3}\right)+
+				\right.& \notag \\ &\left.
+				4\ln\left(1+\frac{3}{2}\right)+
+				2\ln\left(1+\frac{5}{3}\right)+
+				4\ln\left(1+\frac{11}{6}\right)+
+				\ln(1+2)
+			\right]& \notag \\
+			&\approx \frac{1}{18}\left[
+				\ln(2)+
+				4\ln\left(\frac{13}{6}\right)+
+				2\ln\left(\frac{7}{3}\right)+
+				4\ln\left(\frac{5}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				2\ln\left(\frac{8}{3}\right)+
+				4\ln\left(\frac{17}{6}\right)+
+				\ln(3)
+			\right]& \label{eq:q1c_composite_simp}
+		\end{align}
+
+		Solving \cref{eq:q1c_composite_simp} using GNU Octave to gain precision:
+
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx &\approx 0.909541759764950& \label{eq:q1c_approx}
+		\end{align}
+
+		Using \cref{eq:q1_exact} to discover the absolute error of \cref{eq:q1c_approx}:
+
+		\begin{align}
+			\text{Error}_{abs} &= |\text{Exact} - \text{Approximation}|& \\
+			\text{Error}_{abs} &= |0.909542504884439 - 0.909541759764950|& \notag \\
+			&= 0.000000745119489&
+		\end{align}
+
 	\subsection{Question (d)}
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx	 &\approx  \frac{3h}{8}\left[
+			f(x_{0})+
+			3 \sum_{i=1}^{n/3} f(x_{3i-2}) +
+			3 \sum_{i=1}^{(n/3)-1} f(x_{3i-1}) +
+			\right.& \notag \\ &\left. \quad \quad \quad
+			2 \sum_{i=1}^{(n/2)-2} f(x_{3i}) +
+			f(x_{n})
+			\right]& \\
+			h &= \frac{b-a}{n} = \frac{1}{6}& \\
+			\int_{1}^{2}\ln{(x+1)} \ dx	 &\approx  \frac{3}{48}\left[
+				f(1)+
+				3f\left(1+\frac{1}{6}\right)+
+				3f\left(1+\frac{2}{6}\right)+
+				\right.& \notag \\ &\left. \quad \quad
+				2f\left(1+\frac{3}{6}\right)+
+				3f\left(1+\frac{4}{6}\right)+
+				3f\left(1+\frac{5}{6}\right)+
+				f(2)
+			\right]& \notag \\
+			&\approx \frac{1}{16}\left[
+				f(1)+
+				3f\left(\frac{7}{6}\right)+
+				3f\left(\frac{4}{3}\right)+
+				2f\left(\frac{3}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				3f\left(\frac{5}{3}\right)+
+				3f\left(\frac{11}{6}\right)+
+				f(2)
+			\right]& \\
+			&\approx \frac{1}{16}\left[
+				\ln(1+1)+
+				3\ln\left(1+\frac{7}{6}\right)+
+				3\ln\left(1+\frac{4}{3}\right)+
+				\right.& \notag \\ &\left.
+				2\ln\left(1+\frac{3}{2}\right)+
+				3\ln\left(1+\frac{5}{3}\right)+
+				3\ln\left(1+\frac{11}{6}\right)+
+				\ln(1+2)
+			\right]& \notag \\
+			&\approx \frac{1}{16}\left[
+				\ln(2)+
+				3\ln\left(\frac{13}{6}\right)+
+				3\ln\left(\frac{7}{3}\right)+
+				2\ln\left(\frac{5}{2}\right)+
+				\right.& \notag \\ &\left. \quad \quad \quad
+				3\ln\left(\frac{8}{3}\right)+
+				3\ln\left(\frac{17}{6}\right)+
+				\ln(3)
+			\right]& \label{eq:q1d_composite_3p8simp}
+		\end{align}
+
+		Solving \cref{eq:q1d_composite_3p8simp} using GNU Octave to gain precision:
+
+		\begin{align}
+			\int_{1}^{2}\ln{(x+1)} \ dx &\approx 0.909540847647380& \label{eq:q1d_approx}
+		\end{align}
+
+		Using \cref{eq:q1_exact} to discover the absolute error of \cref{eq:q1d_approx}:
+
+		\begin{align}
+			\text{Error}_{abs} &= |\text{Exact} - \text{Approximation}|& \\
+			\text{Error}_{abs} &= |0.909542504884439 - 0.909541759764950|& \notag \\
+			&= 0.000001657237059&
+		\end{align}

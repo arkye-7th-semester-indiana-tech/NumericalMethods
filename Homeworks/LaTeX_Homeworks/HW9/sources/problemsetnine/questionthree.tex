@@ -1,1 +1,65 @@
 \section{Simpson's 1/3 Method}
+	The distance $s$ can be determined as:
+	\begin{align}
+		s = \int_{t_{0}}^{t_{n}} v(t) \ dt \label{eq:eq3_int}
+	\end{align}
+
+	Using Simpson's 1/3 Method to approximate \cref{eq:eq3_int}:
+
+	\begin{align}
+		\int_{t_{0}}^{t_{n}} v(t) \ dt &\approx  \frac{h}{3}\left[
+		f(v_{0})+
+		4 \sum_{i=1}^{t_{n}/2} f(v_{2i-1}) +
+		2 \sum_{i=1}^{(t_{n}/2)-1} f(v_{2i}) +
+		f(v_{n})
+		\right]& \\
+		h &= \frac{b-a}{n} = \frac{10 \ \text{min}}{10} = 1\ \text{min}& \\
+		\int_{t_{0}}^{t_{n}} v(t) \ dt &\approx \frac{1\ \text{min}}{2} \left[
+			v(0)+
+			4v(1)+
+			2v(2)+
+			4v(3)+
+			2v(4)+
+			4v(5)+
+			\right.& \notag \\ & \left. \quad \quad
+			2v(6)+
+			4v(7)+
+			2v(8)+
+			4v(9)+
+			v(10)
+		\right] & \\
+		&\approx \frac{1\ \text{min}}{2} \left[
+			0 \ \text{cm/min} +
+			4(2.3 \ \text{cm/min} )+
+			2(5.6 \ \text{cm/min} )+
+			\right.& \notag \\ & \left. \quad \quad
+			4(2.4 \ \text{cm/min} )+
+			2(6.5 \ \text{cm/min} )+
+			4(3.5 \ \text{cm/min} )+
+			\right.& \notag \\ & \left. \quad \quad
+			2(4.0 \ \text{cm/min} )+
+			4(8.0 \ \text{cm/min} )+
+			2(6.1 \ \text{cm/min} )+
+			\right.& \notag \\ & \left. \quad \quad
+			4(2.3 \ \text{cm/min} )+
+			1.9 \ \text{cm/min}
+		\right] & \notag
+	\end{align}
+	\begin{align}
+		&\approx \frac{1\ \text{min}}{2} \left[
+			9.2 \ \text{cm/min} +
+			11.2 \ \text{cm/min} +
+			9.6 \ \text{cm/min} +
+			\right.& \notag \\ & \left. \quad \quad
+			13.0 \ \text{cm/min} +
+			14.0 \ \text{cm/min} +
+			8.0 \ \text{cm/min} +
+			32.0 \ \text{cm/min} +
+			\right.& \notag \\ & \left. \quad \quad
+			12.2 \ \text{cm/min} +
+			9.2 \ \text{cm/min} +
+			1.9 \ \text{cm/min}
+		\right] & \notag \\
+		&\approx \frac{1 \ \text{min}}{2}(120.3 \ \text{cm/min}) \notag \\
+		&\approx 60.15 \ \text{cm}
+	\end{align}

@@ -1,1 +1,34 @@
 \section{Number of Subintervals}
+	\begin{align}
+		&\int_{0}^{5} f(x) \ dx& &\text{tol} = 10^{-6}& \notag \\
+		&\max_{0 \leq x \leq 5} |f'(x)| = 4& &\max_{0 \leq x \leq 5} |f''(x)| = 8& \notag \\
+		&\max_{0 \leq x \leq 5} |f'''(x)| = 12& &\max_{0 \leq x \leq 5} |f^{(4)}(x)| = 18& \notag
+	\end{align}
+
+	\subsection{Question (a)}
+		\begin{align}
+			\frac{h^{2}}{12}(b-a)f''(c) &\leq \text{tol}& \\
+			\frac{h^{2}}{12}(5)(8) &\leq 10^{-6}& \notag \\
+			h^{2} &\leq \frac{12*10^{-6}}{40}& \notag \\
+			h &\leq \sqrt{3*10^{-7}}& \notag \\
+			h &\leq 0.00054772& \\
+			\frac{b-a}{n} &= h& \\
+			n &= \frac{b-a}{h}& \\
+			n &\geq \frac{5}{0.00054772}& \notag \\
+			n &\geq 9128.75192& \notag \\
+			\lceil n \rceil &= 9129&
+		\end{align}
+
+	\subsection{Question (b)}
+		\begin{align}
+			\frac{h^{4}}{180}(b-a)f^{(4)}(c) &\leq \text{tol}& \\
+			\frac{h^{4}}{180}(5)(18) &\leq 10^{-6}& \notag \\
+			h^{4} &\leq \frac{180*10^{-6}}{90}& \notag \\
+			h &\leq \sqrt[4]{2*10^{-6}}& \notag \\
+			h &\leq 0.03760603& \\
+			\frac{b-a}{n} &= h& \\
+			n &= \frac{b-a}{h}& \\
+			n &\geq \frac{5}{0.03760603}& \notag \\
+			n &\geq 132.95740& \notag \\
+			\lceil n \rceil &= 133&
+		\end{align}

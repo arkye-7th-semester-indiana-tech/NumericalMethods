@@ -1,4 +1,130 @@
 \section{Bonus - MATLAB}
 	\subsection{Question (a)}
+		\begin{align}
+			f(x) = \sin{(\pi x^{2})}e^{-x} \label{eq:bonus_a}
+		\end{align}
+
+		To discover the approximation of the volume of the solid formed when the region bounded by \cref{eq:bonus_a} over the interval $0 \leq x \leq 1$ is revolved about the x-axis using the composite trapezoidal method is necessary to:
+
+		\begin{align}
+			V(f(x)) &= \int_{a}^{b} A(f(x)) \ dx& \\
+			A(f(x)) &= \pi (f(x))^{2}& \\
+			A &= \pi (\sin{(\pi x^{2})}e^{-x})^{2}& \\
+			V &= \int_{0}^{1} \pi (\sin{(\pi x^{2})}e^{-x})^{2} \ dx& \\
+			g(x) &= (\sin{(\pi x^{2})}e^{-x})^{2}& \\
+			V &\approx \pi \left\{ \frac{h}{2}\left[g(x_{0})+2\left(\sum_{i=1}^{n-1}g(x_i)\right)+g(x_{n})\right] \right\}&
+		\end{align}
+
+		Analyzing the inputs to be used in MATLAB to approximate $V$:
+		\begin{align}
+			&f = g(x) = (\sin{(\pi x^{2})}e^{-x})^{2}& &a = 0& \notag \\
+			&b = 1& &n = 24& \notag
+		\end{align}
+		Using the Trapezoidal Rule function described in the book  inside of the script described below:
+		\\
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+		\lstinputlisting[language=Octave]{../MATLAB_Homeworks/HW9/hw9_6a.m}
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+
+		The output values are:
+		\begin{itemize}
+			\item{\textbf{approximation}: $0.1052698143206541$}
+			\item{\textbf{volume\_approximated}: $0.3307148753145285$}
+		\end{itemize}
+
+		Code maintained at:
+		\begin{itemize}
+			\item{Trapezoidal Rule: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/rules/trapezoid_rule.m}}
+			\item{Script: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/hw9_6a.m}}
+			\item{Output: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/outputs/hw9_6a_output}}
+		\end{itemize}
+
 	\subsection{Question (b)}
+		\begin{align}
+			y = e^{x} \label{eq:bonus_b}
+		\end{align}
+
+		To discover the approximation of the surface area of the solid formed when the region bounded by \cref{eq:bonus_b} over the interval $0 \leq x \leq 1$ is revolved about the x-axis using the composite Simpson's 1/3 method is necessary to:
+
+		\begin{align}
+			S &= \int_{a}^{b} 2\pi y \ ds& \\
+			ds &= \sqrt{1 + \left(\frac{dy}{dx}\right)^{2}} \ dx& \\
+			S &= 2\pi \int_{a}^{b} y \sqrt{1 + \left(\frac{dy}{dx}\right)^{2}} \ dx \\
+			&= 2\pi \int_{0}^{1} e^{x} \sqrt{1 + e^{2x}} \ dx \\
+			g(x) &= e^{x} \sqrt{1 + e^{2x}}& \\
+			S &\approx 2\pi \left\{ \frac{h}{3}\left[
+			g(x_{0})+
+			4 \sum_{i=1}^{n/2} g(x_{2i-1}) +
+			2 \sum_{i=1}^{(n/2)-1} g(x_{2i}) +
+			g(x_{n})
+			\right]\right\}&
+		\end{align}
+
+		Analyzing the inputs to be used in MATLAB to approximate $S$:
+		\begin{align}
+			&f = g(x) = e^{x} \sqrt{1 + e^{2x}}& &a = 0& \notag \\
+			&b = 1& &n = 24& \notag
+		\end{align}
+		Using the Simpson's Rule function described in the book  inside of the script described below:
+		\\
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+		\lstinputlisting[language=Octave]{../MATLAB_Homeworks/HW9/hw9_6b.m}
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+
+		The output values are:
+		\begin{itemize}
+			\item{\textbf{approximation}: $3.65149627230973$}
+			\item{\textbf{surface\_area\_approximated}: $22.94302772739752$}
+		\end{itemize}
+
+		Code maintained at:
+		\begin{itemize}
+			\item{Simpson's Rule: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/rules/simpson_rule.m}}
+			\item{Script: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/hw9_6b.m}}
+			\item{Output: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/outputs/hw9_6b_output}}
+		\end{itemize}
+
 	\subsection{Question (c)}
+		\begin{align}
+			&x = 2\cos(t)&
+			&y = \sin(t)&
+		\end{align}
+
+		To discover the approximation of the arc length of the curve defined parametrically by $x$ and $y$ over the interval $0 \leq t \leq 2 \pi$ using the composite Simpson's 1/3 method is necessary to:
+
+		\begin{align}
+			\text{Arc}_{length} &= \int_{a}^{b} ds& \\
+			ds &= \sqrt{\left(\frac{dx}{dt}\right)^{2} + \left(\frac{dy}{dt}\right)^{2}} \ dt& \\
+			\text{Arc}_{length} &= \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^{2} + \left(\frac{dy}{dt}\right)^{2}} \ dt \\
+			&= \int_{0}^{2\pi} \sqrt{(-2\sin(t))^{2} + (\cos(t))^{2}} \ dt \\
+			f(t) &= \sqrt{(-2\sin(t))^{2} + (\cos(t))^{2}}& \\
+			\text{Arc}_{length} &\approx \frac{h}{3}\left[
+			f(t_{0})+
+			4 \sum_{i=1}^{n/2} f(t_{2i-1}) +
+			2 \sum_{i=1}^{(n/2)-1} f(t_{2i}) +
+			f(t_{n})
+			\right]&
+		\end{align}
+
+		Analyzing the inputs to be used in MATLAB to approximate Arc$_{length}$:
+		\begin{align}
+			&f = f(t) = = \sqrt{(-2\sin(t))^{2} + (\cos(t))^{2}}& &a = 0& \notag \\
+			&b = 2\pi& &n = 24& \notag
+		\end{align}
+		Using the Simpson's Rule function described in the book  inside of the script described below:
+		\\
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+		\lstinputlisting[language=Octave]{../MATLAB_Homeworks/HW9/hw9_6c.m}
+		\noindent\makebox[\linewidth]{\rule{\paperwidth/2}{0.4pt}}
+
+		The output values are:
+		\begin{itemize}
+			\item{\textbf{arc\_length\_approximated}: $6.283185307179586$}
+		\end{itemize}
+
+		Code maintained at:
+		\begin{itemize}
+			\item{Simpson's Rule: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/rules/simpson_rule.m}}
+			\item{Script: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/hw9_6c.m}}
+			\item{Output: \url{https://github.com/arkye-7th-semester-indiana-tech/NumericalMethods/Homeworks/MATLAB_Homeworks/HW9/outputs/hw9_6c_output}}
+		\end{itemize}
