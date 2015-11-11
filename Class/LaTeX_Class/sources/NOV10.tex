@@ -1,0 +1,111 @@
+\section{NOV 10}
+	\subsection{Extrapolation Technique}
+		\begin{align}
+			\text{Exact} &= \text{Approx.} + \text{Error}& \\
+			\text{Exact} &= \text{Approx.} + Kh^{n}&
+		\end{align}
+
+	\subsection{Ordinary Differential Equations}
+		Reminder:
+		\begin{itemize}
+			\item{Every $1^{st}$-order D.E. may be written in the form:
+			\begin{align}
+				\frac{dy}{dx} &= f(x,y)&
+			\end{align}
+			Which is called the \textbf{normal form}. Additionally, if it is known that the solution $y(x)$ passes through $(x_{0},y_{0})$, we have an I.V.P. (Initial Value Problem).
+			\begin{align}
+				&\frac{dy}{dx} = f(x,y)& &,& &y(x_{0}) = y_{0}&
+			\end{align}}
+		\end{itemize}
+
+		\subsubsection{Theorem (Existence \& Uniqueness)}
+			Let $f(x,y)$ be continuous on some rectangular region containing $(x_{0},y_{0})$, then the IVP has at least one solution. Moreover, if
+			\begin{align}
+				\frac{\partial f}{\partial y} &= f_{y}&
+			\end{align}
+			is also continuous on this region, then the solution is unique.
+			Example:
+			\begin{align}
+				\frac{dy}{dx} &= \sqrt{x} + \sqrt{y}&&,& &y(1) = 2&
+			\end{align}
+			$f(x,y) = \sqrt{x} + \sqrt{y}$ is continuous on the region:
+			\begin{align}
+				\left{ (x,y) : x \geq 0 \text{&} y \geq 0 \right}
+			\end{align}
+			$\frac{\partial f}{\partial y} = 0 + \frac{1}{2\sqrt{y}} = \frac{1}{2\sqrt{y}}$ is continuous on the region:
+			\begin{align}
+				\left{ (x,y) : y > 0 \right}
+			\end{align}
+			a unique solution is guaranteed if $(x_{0},y_{0}) \in \left{ (x,y) : x \geq 0, y > 0 \right}$.
+
+		\subsubsection{Analytic (Using diff., int.) Methods}
+			Recall, the $n^{th}$ degree polynomial of $y(x)$ is given by:
+			\begin{align}
+				P_{n}(x) = y(x_{0}) + y'(x_{0})(x-x_{0}) + \frac{y''(x_{0})}{2!}(x-x_{0})^{2} + \dots + \frac{y^{(n)}(x_{0})}{n!}(x-x_{0})^{n}
+			\end{align}
+			a sequence of polynomials, ${P_{n}}$, may be constructed using the IVP.
+			Example:
+			\begin{align}
+				\frac{dy}{dx} &= 2x(1-y)& &,& &y(0) = 0& \\
+				P_{0}(x) &= y(0) = 0& \\
+				P_{1}(x) &= y(0) + y'(0)(x-0)& \notag \\
+				&= 0 + 2*0(1-0)*x = 0& \\
+				P_{2}(x) &= y(0) + y'(0)(x-0) + \frac{y''(0)}{2!}(x-0)^{2}& \notag \\
+				y' &= \frac{dy}{dx} = 2x(1-y)&
+				y'' = \frac{d}{dx}\left[ \frac{dy}{dx} \right] &= 2(1-y)+2x(0-y')& \notag \\
+				&= 2(1-y) + 2x(-y') = 2(1-y) - 2xy'& \\
+				y''(0) &= 2(1-0) - 2*0*0 = 2& \\
+				P_{2}(x) = 0 + 0 + \frac{2}{2}x^{2} = x^{2}\\
+				y''' &= 2(0-y')-(2y' + 2xy'')& \notag \\
+				&= -2y' - 2y' - 2xy'' = -4y' - 2xy''& \\
+				y'''(0) &= -4*0 - 2*0*2 = 0& \\
+				P_{3}(x) &= x^{2} + \frac{y'''(0)}{3!}(x-0)^{3} = x^{2}& \\
+				y^{(4)} &= -4y''-(2y''+2xy''') = -6y'' - 2xy'''& \\
+				y^{(4)}(0) &= -6*2 - 0 = -12& \\
+				P_{4}(x) &= x^{2} + \frac{y^{(4)}(0)}{4!}(x-0)^{4} = x^{2} - \frac{12}{24}x^{4}& \notag \\
+				&= x^{2} - \frac{1}{2}x^{4}&
+			\end{align}
+			\begin{align}
+				&\text{The sequence, }& &P_{0}(x) = 0& \notag \\ &\text{converges to the Taylor series of the solution y(x).}
+				&& &P_{1}(x) = 0& \notag \\
+				&& &P_{2}(x) = x^{2}& \notag \\
+				&& &P_{3}(x) = x^{2}& \notag \\
+				&& &P_{4}(x) = x^{2} - \frac{1}{2}x^{4}& \notag \\
+			\end{align}
+
+			The Picard method is based on the Fundamental Theorem of Calculus:
+			\begin{align}
+				&\frac{dy}{dx} = f(x,y)& &,& &y(x_{0}) = y_{0}&
+			\end{align}
+			The F.T.C. states that $y(x)$ may be expressed as the following integral:
+			\begin{align}
+				y(x) &= y_{0} + \int_{x_{0}}^{x} f(t,y(t)) dt&
+			\end{align}
+			($t =$ dummy variable, or placeholder)
+			Example:
+			\begin{align}
+				\frac{dy}{dx} &= x^{2}, y(1) = 3& \\
+				y &= 3 + \int_{1}^{x} t^{2} dt& \\
+				y &= 3 + \frac{1}{3}t^{3}|_{1}^{x}& \notag \\
+				y &= 3 + (\frac{1}{3}x^{3} - \frac{1}{3})& \notag \\
+				y &= \frac{1}{3}x^{3} + \frac{26}{3}&
+			\end{align}
+			The Picard iteration uses the following recurrence relation:
+			\begin{align}
+				y_{n+1} &= y_{0} + \int_{x_0}^{x} f(t,y_{n}) dt&
+			\end{align}
+			Example:
+			\begin{align}
+				\frac{dy}{dx} &= x + y& &,& &y(0) = 2& \\
+				y_{0} &= 2&
+				y_{1} = y_{0} + \int_{0}^{x} t + y_0 dt &= 2+\int_{0}^{x}t+2dt& \notag \\
+				&= 2 + \left[\frac{1}{2}t^{2} + 2t\right]_{0}^{x}& \notag \\
+				&= 2 + \left[\frac{1}{2}x^{2} + 2x\right] = \frac{1}{2}x^{2} + 2x + 2& \\
+				y_{2} &= y_{0} + \int_{0}^{x} t + y_1 dt & \notag \\
+				&= 2 + \int_{0}^{x} t + \frac{1}{2}t^{2} + 2t + 2 dt & \notag \\
+				&= 2 + \int_{0}^{x} \frac{1}{2}t^{2} + 3t + 2 dt & \notag \\
+				&= 2 + \left[\frac{1}{6}t^{3} + \frac{3}{2}t^{2} + 2t\right]_{0}^{x} & \notag \\
+				&= 2 + \left[\frac{1}{6}x^{3} + \frac{3}{2}x^{2} + 2x - 0\right]_{0}^{x} & \notag \\
+				&= \frac{1}{6}x^{3} + \frac{3}{2}x^{2} + 2x + 2&
+			\end{align}
+			The sequence $y_{0}, y_{1}, y_{2}, \dots,$ converges to $y(x)$.
