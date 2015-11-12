@@ -1,0 +1,113 @@
+\section{NOV12}
+
+	\begin{align}
+		\frac{dy}{dx} &= f(x,y), y(x_{0}) = y_{0}& \\
+		y(x) &= y_{0} + \int_{x_{0}}^{x} f(t,y(t)) \ dt&
+	\end{align}
+
+	\begin{align}
+		\text{Picard:} y_{n+1} &= y_{0} + \int_{x_{0}}^{x} f(t,y_{n}(t)) \ dt&
+	\end{align}
+
+	\subsection{Numeric}
+
+		Instead of evaluating $\int_{x_{0}}^{x} f(t,y(t)) \ dt$ exactly, if we apply certain numerical integration technique, we obtain \textit{easier} numerical methods.
+
+		\begin{align}
+			y(x) &= y_{0} + \int_{x_{0}}^{x} f(t,y(t)) \ dt&
+		\end{align}
+
+		Let $x = x_{0} + h$. Using a left-Riemann approximation with $1$ subinterval, we have:
+
+		\begin{align}
+			y_{1} = y(x_{0} + h) &= y_{0} + \int_{x_{0}}^{x_{0}+h} f(t,y(t)) \ dt& \\
+			&\approx y_{0}+hf(x_{0},y(x_{0})) \notag \\
+			&= y_{0} + hf(x_{0}, y_{0})&
+		\end{align}
+
+		In general, we have:
+
+		\begin{align}
+			y_{n+1} &= y_{n} + hf(x_{n}, y_{n}); x_{n} = x_{0} + nh&
+		\end{align}
+
+		$hf(x_{n}, y_{n}) =$ Approximate Change.
+		This is \textbf{Euler's method}.
+
+		Example:
+		\begin{align}
+			\frac{dy}{dx} &= 2x - y^{2}, y(0) = -1&
+		\end{align}
+
+		Approximate the solution over $0 \leq x \leq 1$ to this IVP using Euler's method using $h = 0.25 (n = 4)$
+
+		\begin{table}[H]
+			\begin{tabular}{|c|c|c|}
+				\hline
+				n & Xn & Yn \hline \\
+				0 & 0 & -1 \hline \\
+				1 & 0.25 & -1.25 \hline \\
+				2 & 0.5 & -1.515625 \hline \\
+				3 & 0.75 & -1.839904785 \hline \\
+				4 & 1 & -2.31121719 \hline
+			\end{tabular}
+		\end{table}
+
+		Calculator:
+		\begin{align}
+			y_{1} -> y + 0.25(2x-y^{2}) \notag \\
+			0 -> x \notag \\
+			-1->y \notag \\
+			Ans -> y \notag \\
+			0.25 -> x \notag \\
+			y_{1} \notag
+		\end{align}
+
+		\begin{align}
+			y_{1} &= y_{0} + 0.25f(x_{0}, y_{0})& \notag \\
+			&= -1 + 0.25(2(0) - (-1)^{2})& \notag \\
+			&= -1 - 0.25 = -1.25 \\
+			y_{2} &= y_{1} + 0.25f(x_{1},y_{1})& \notag \\
+			&= -1.25 + 0.25(2(0.25) - (-1.25)^{2}) \notag \\
+			&= -1.515625&
+		\end{align}
+
+		If the basic trapezoidal rule is used to approximate the integral:
+
+		\begin{align}
+			\int_{a}^{b} f(x) \ dx &\approx \frac{h}{2} \left[ f(a) + f(b) \right]& \\
+			y(x_{0}+h) &\approx y_{0} + \frac{h}{2}\left[ f(x_{0}, y(x_{0})+f(x_{0}+h, y(x_{0}+h)))\right]
+		\end{align}
+
+		Since $y(x_{0}+h)$ appears on both sides, this is referred to as an \textbf{implicit}. If $f$ is \textit{complicated}, $y(x_{0}+h)$ cannot be isolated.
+
+		\begin{align}
+			&= y_{0} + \frac{1}{2}\left[ hf(x_{0},y_{0}) + hf(x_{0}+h, y(x_{0}+h))\right]& \\
+			k_{1} &= hf(x_{0},y_{0})& \\
+			k_{2} &= hf(x_{0}+h, y(x_{0}+h)) = hf(x_{0}+h, y_{0} + k_{1}))& \\
+			y_{1} &= y_{0} + \frac{1}{2}(k_{1}+k_{2})&
+		\end{align}
+
+		In general,
+		\begin{align}
+			k_{1} &= hf(x_{n}, y_{n})& \\
+			k_{2} &= hf(x_{n}+h, y_{n} + k_{1}))&
+		\end{align}
+		This is the \textbf{Modified Euler's method}.
+
+		Example:
+		\begin{align}
+			\frac{dy}{dx} &= 2x - y^{2}, y(0) = -1& \\
+			k_{1} &= 0.25(2x_{n} - y_{n}^{2})& \\
+			k_{2} &= 0.25(2(x_{n}+0.25)-(y_{n}+k_{1})^{2})& \\
+			y_{n+1} &= y_{n} + \frac{1}{2}(k_{1}+k_{2})&
+		\end{align}
+
+		\begin{align}
+			&x_{0}=0& &y_{0} = -1& &k_{1} = -0.25& &k_{2} = 0.25(0.5 - (-1 -0.25)^{2})& \notag
+		\end{align}
+
+		\begin{align}
+			y_{1} &= -1 + \frac{1}{2}( - 0.25 + ( 0.25(0.5 - (-1 -0.25)^{2}) ) )& \notag \\
+			&= -1.2578125&
+		\end{align}
