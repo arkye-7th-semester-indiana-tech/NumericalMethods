@@ -1,6 +1,36 @@
 \section{Taylor Approximating Polynomial}
 	\subsection{Question (a)}
-		% TODO
+		\begin{align}
+			&y' = \cos{(x)}-y&
+			&y(0) = -1&
+			&p_{3}(x)&
+		\end{align}
+
+		\begin{align}
+			p_{3}(x) &= y(x_{0}) + y'(x_{0})(x-x_{0}) + \frac{y''(x_{0})}{2!}(x - x_{0})^{2} + \frac{y'''(x_{0})}{3!}(x - x_{0})^{3}& \\
+			y' &= \cos{(x)}-y& \\
+			y'(0) &= \cos{(0)} - y(0) = 1 - (-1) = 2& \\
+			y'' &= -\sin{(x)} - y' = -\sin{(x)} - \cos{(x)} + y& \\
+			y''(0) &= -\sin{(0)} - \cos{(0)} + y(0) = -1 -1 = -2 & \\
+			y''' &= -\cos{(x)} - y'' = \sin{(x)} - y& \\
+			y'''(0) &= \sin{(0)} - y(0) = -(-1) = 1& \\
+			p_{3}(x) &= y(0) + y'(0)x + \frac{y''(0)}{2}x^{2} + \frac{y'''(0)}{6}x^{3}& \\
+			p_{3}(x) &= -1 + 2x + \frac{-2x^{2}}{2} + \frac{x^{3}}{6} = \frac{x^{3}}{6} - x^{2} + 2x - 1&
+		\end{align}
 
 	\subsection{Question (b)}
-		% TODO
+		\begin{align}
+			&y' = e^{x}y&
+			&y(0) = 2&
+			&p_{2}(x)&
+		\end{align}
+
+		\begin{align}
+			p_{2}(x) &= y(x_{0}) + y'(x_{0})(x-x_{0}) + \frac{y''(x_{0})}{2!}(x-x_{0})^{2}& \\
+			y' &= e^{x}y& \\
+			y'(0) &= e^{0}y(0) = 1(2) = 2& \\
+			y'' &= e^{x}y + e^{x}y' = e^{x}(y + e^{x}y)& \\
+			y''(0) &= e^{0}(y(0) + e^{0}y(0)) = 1(2 + 1(2)) = 4& \\
+			p_{2}(x) &= y(0) + y'(0)x + \frac{y''(0)}{2}x^{2}& \\
+			p_{2}(x) &= 2 + 2x + 2x^{2} = 2(x^{2} + x + 1)&
+		\end{align}
