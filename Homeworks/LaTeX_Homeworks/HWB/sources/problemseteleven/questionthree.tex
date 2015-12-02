@@ -1,0 +1,37 @@
+\section{Conversion into First-Order}
+	\subsection{Question (a)}
+		\begin{align}
+			&y'' + ty' - 3y = t^{2}&
+			&y(0) = 3&
+			&y'(0) = 4&
+		\end{align}
+
+		\begin{align}
+			y'' &= -ty' + 3y  + t^{2}& \\
+			u_{1} &= y'& \\
+			u_{1}' &= y''& \\
+			u_{1}' &= -tu_{1} + 3y + t^{2}& \\
+			y(0) &= 3& \\
+			u_{1}(0) &= 4&
+		\end{align}
+
+	\subsection{Question (b)}
+		\begin{align}
+			&y^{(4)} - y''' + y'' - 2y' + 7y = cos(t)&
+			&y(0) = y'(0) = 0& \notag \\
+			&y''(0) = 1&
+			&y'''(0) = 2&
+		\end{align}
+
+		\begin{align}
+			y^{(4)} &= y''' - y'' + 2y' - 7y + cos(t)& \\
+			u_{1} &= y'& \\
+			u_{1}' &= y'' = u_{2}& \\
+			u_{2}' &= y''' = u_{3}& \\
+			u_{3}' &= y^{(4)}& \\
+			u_{3}' &= u_{3} - u_{2} + 2u_{1} - 7y + cos(t) \\
+			y(0) &= 0& \\
+			u_{1}(0) &= 0& \\
+			u_{2}(0) &= 1& \\
+			u_{3}(0) &= 2&
+		\end{align}

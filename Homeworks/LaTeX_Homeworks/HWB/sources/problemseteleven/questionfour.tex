@@ -1,0 +1,39 @@
+\section{Euler's method approximation on 3(a)}
+	\begin{align}
+		&u_{1}' = -tu_{1} + 3y + t^{2}&
+		&y(0) = 3&
+		&u_{1}(0) = 4&
+		\notag \\
+		&0 \leq t \leq 2&
+		&n = 2&
+		&h = 1&
+	\end{align}
+
+	\begin{align}
+		y_{n+1} &= y_{n} + h(u_{1_{n}})& \\
+		u_{1_{n+1}} &= u_{1_{n}} + h(-tu_{1_{n}} + 3y_{n} + t^{2})&
+	\end{align}
+
+	\begin{align}
+		y_{1} &= 3 + 1(4)& \notag \\
+		&= 7& \\
+		u_{1} &= 4 + 1(-(0)(4) + 3(3) + (0)^{2})& \notag \\
+		&= 13&
+	\end{align}
+
+	\begin{align}
+		y_{2} &= 7 + 1(13)& \notag \\
+		&= 20& \\
+		u_{2} &= 13 + 1(-(1)(13) + 3(7) + (1)^{2})& \notag \\
+		&= 22&
+	\end{align}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			$n$ & $t_{n}$ & $y_{n}$ & $u_{1_{n}}$ \\ \hline
+			1 & 0 & 7 & 13 \\ \hline
+			2 & 1 & 20 & 22 \\ \hline
+		\end{tabular}
+	\end{table}
