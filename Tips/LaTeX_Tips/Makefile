@@ -1,7 +1,7 @@
 ## Arkye's LaTeX Structure Makefile ##
 
 # Output Name
-TARGET = JonathanMoraes_NMethods_EX2
+TARGET = JonathanMoraes_NMethods_QZ2
 
 # LaTeX Project Settings
 MAIN_DIR = QZ2
